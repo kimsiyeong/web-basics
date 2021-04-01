@@ -31,3 +31,13 @@ header>.material-icons#btn--open{
 header>.material-icons#btn--close{
     display: none;
 }
+
+/* side nav */
+nav{
+    position: absolute;
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 300px;
+    background: #000;
+    transform: translate(-100%);
+}
