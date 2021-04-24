@@ -1,0 +1,2492 @@
+#header {
+    background-color: #FFF;
+    height: 200px;
+    border-bottom: solid 2px #0a2b6d;
+    position: relative;
+    z-index: 15;
+
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, div, p, button, input, select, label, textarea, fieldset, th, td, form {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #272727;
+    font-size: 14px;
+    letter-spacing: -0.04em;
+    font-family: malgun Gothic, "맑은 고딕", Dotum, "돋움", sans-serif;
+}
+
+div{
+    display: block;
+}
+
+/* body */
+/* body{
+    background-color: #FFF;
+    word-break: break-all;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block; */
+    /* margin: 8px;
+} */
+
+/* html */
+/* html {
+    -webkit-text-size-adjust: none;
+    margin: 0;
+    padding:0;
+} */
+
+#util {
+    background-color: #f6f6f6;
+    border-bottom: solid 1px #ebecf0;
+    height: 36px;
+}
+
+#util .core {
+    width: 1160px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+#util .link {
+    zoom: 1;
+    position: relative;
+    z-index: 4;
+    float: right;
+}
+
+ul, ol, li, dd {
+    list-style: none;
+}
+
+ul{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+
+
+#util .link > li {
+    font-family: "Spoqa Han Sans", sans-serif;
+    float: left;
+    padding: 8px 0;
+    font-size: 12px;
+    color: #000;
+}
+
+
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+li{
+    text-align: -webkit-match-parent;
+}
+
+ul{
+    list-style-type: disc;
+}
+
+#header_logo {
+    height: 96px;
+}
+
+#header_logo .core{
+    width: 1160px;
+    position : relative;
+    margin: 0 auto;
+}
+
+#header_logo h1{
+    text-align: center;
+    padding-top: 32px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+#header_logo h1 a {
+    display: block;
+    width: 131px;
+    height: 40px;
+    text-indent: -9999em;
+    background: url("https://image.jinhak.com/renewal2019/common/logo_jinhak.png") no-repeat center top;
+    margin: 0 auto;
+}
+
+#header_logo .target {
+    position: absolute;
+    top: 40px;
+    left: 0;
+}
+
+#header_logo .target li:first-child {
+    margin-left: 0;
+}
+
+#header_logo .target li {
+    float: left;
+    margin-left: 3px;
+}
+
+#header_logo .target li a {
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    line-height: normal;
+    width: 70px;
+    height: 34px;
+    font-size: 14px;
+    color: #b3bac1;
+    padding-top: 5px;
+    background-color: #f0f2f4;
+    border: solid 2px transparent;
+    border-radius: 17px;
+}
+
+#header_logo .target li.selected a, 
+#header_logo .target li a:hover {
+    border-color: #0a2b6d;
+    background-color: #FFF;
+    color: #0a2b6d;
+}
+
+#util .link .more{
+    position: absolute;
+    width: 140px;
+    margin-left: -20px;
+    margin-top: -9999em;
+    text-align: left;
+    border: solid 1px #dedede;
+    background-color: #FFF;
+    -webkit-box-shadow: 3px 3px 3px rgb(0 0 0 / 10%);
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 10%);
+    overflow: hidden;
+}
+
+.more{
+    text-align: center;
+    position: relative;
+}
+
+#util .link .more .smenu {
+    padding: 5px 0;
+}
+
+#util .link .more .smenu > li{
+    position: relative;
+    padding: 4px 5px 4px 17px;
+}
+
+li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul ul{
+    list-style-type: circle;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+}
+
+ul{
+    list-style-type: disc;
+}
+
+#util .link .more a, #util .link .more button,
+#util .link .more dt{
+    font-size: 12px;
+    color: #000;
+}
+
+.more a, .more button{
+    display: inline-block;
+    padding-right: 10px;
+    position: relative;
+}
+
+#util .link .more .smenu.arr{
+    padding: 0;
+}
+
+#util .link .more .smenu .arr > li:first-child{
+    border-top-width: 0;
+}
+
+#util .link .more .smenu.arr > li {
+    padding: 6px 5px 7px 17px;
+    border-top: solid 1px #dedede;
+}
+
+#util .link .more .smeu.arr > li {
+    position: relative;
+    padding: 4px 5px 4px 17px;
+}
+
+#util .link .more .smenu.arr > li > a.selected {
+    font-weight: bold;
+}
+
+#util .link .more .smenu.arr > li > a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+#util .link .more a, #util .link .more button, #util .link .more dt {
+    font-size: 12px;
+    color: #000;
+}
+
+.more a, .more button {
+    display: inline-block;
+    padding-right: 10px;
+    position: relative;
+}
+
+#util .link .more .smenu.arr > li ul{
+    display: none;
+    margin: 2px 0 6px -8px;
+}
+
+ul ul ul{
+    list-style-type: square;
+}
+
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+
+#util .link .more .smenu.arr > li ul li{
+    position: relative;
+    padding-left: 8px;
+    margin-top: 7px;
+}
+
+/* script{
+    display: none;
+} */
+
+#header_logo .ad{
+    position: absolute;
+    top: 29px;
+    right: 0;
+    width: 211px;
+    height: 43px;
+    overflow: hidden;
+    padding: 0 17px;
+
+}
+/* div class ad 밑에것들 필요없을것같은데 잘모르겠음 */
+/* element.style{
+    max-width: 100%;
+}
+
+element.style{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 43px;
+}
+
+element.style{
+    width: 2215%;
+    position: relative;
+    transition-duration: 0s;
+    transform: translate3d(-354px, 0px, 0px);
+}
+
+element.style{
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 177px;
+} */
+/* 여기까지 */
+
+select, input, textarea, img{
+    vertical-align: middle;
+}
+
+img, fieldset, iframe{
+    border: 0;
+}
+
+
+/* img 옆에 [Attributes Style] 넣을건지 고민*/
+img { 
+    width: 177px;
+    aspect-ratio: auto 177 / 43;
+    height: 43px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+}
+
+Style Attribute {
+    float: left;
+    list-style: none;
+    position: relative;
+    width: 177px;
+}
+
+#header_logo .ad .btn_prev{
+    left: 0;
+    background: url(https://image.jinhak.com/renewal2019/common/arr4_prev.png) no-repeat left center;
+}
+
+#header_logo .ad .btn_prev, #header_logo .ad .btn_next{
+    position: absolute;
+    top: 0;
+    width: 17px;
+    height: 43px;
+}
+
+p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#header_logo .ad .btn_prev a, #header_logo .ad .btn_next a {
+    display: block;
+    height: 100%;
+    text-indent: -9999em;
+}
+
+#header_logo .ad .btn_next {
+    right: 0;
+    background: url(https://image.jinhak.com/renewal2019/common/arr4_next.png) no-repeat right center;
+
+}
+
+#gnb.gnbTopFix {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    left: 0;
+    z-index: 14;
+    background-color: #0a2b6d;
+}
+
+#gnb {
+    position: relative;
+    z-index: 3;
+    border-top: solid 1px #dcdcdc;
+}
+
+#gnb > .core {
+    zoom: 1;
+    width: 1160px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* #gnb > .core:after{
+    content: "";
+    display: table;
+    clear: both;
+    table-layout: fixed;
+} */
+
+#gnb.gnbTopFix.btn_all{
+    height: 58px;
+}
+
+#gnb.btn_all{
+    float: left;
+    width: 54px;
+    height: 66px;
+}
+
+#gnb.gnbTopFix.btn_all .btn_ico{
+    margin-top: 19px;
+    background-image:url(https://image.jinhak.com/renewal2019/common/btn_menu_all_on.png);
+}
+
+#gnb.btn_all .btn_ico {
+    display: block;
+    width: 26px;
+    height: 20px;
+    margin-top: 23px;
+    background: url(https://image.jinhak.com/renewal2019/common/btn_menu_all.png) no-repeat center center;
+    text-indent: -9999em;
+}
+
+#gnb .menu1 {
+    float: left;
+}
+
+#gnb .menu1 > li, #gnb .menu2 > li {
+    float: left;
+}
+
+#gnb.gnbTopFix .menu1 > li > a, #gnb.gnbTopFix .menu2 > li >a{
+    height: 59px;
+    line-height: 58px;
+}
+
+#gnb.gnbTopFix .menu1 > li >a {
+    color: #FFF;
+}
+
+#gnb .menu1 > li:first-child > a {
+    margin-left: 0;
+}
+
+#gnb .menu1 > li:first-child > a{
+    padding-left: 0;
+}
+
+#gnb .menu1 > li > a {
+    position: relative;
+    display: block;
+    color: #333;
+    font-weight: 500;
+}
+
+#gnb .menu1 > li > a, #gnb .menu2 > li > a {
+    font-family:"Noto Sans KR", sans-serif;
+    position: relative;
+    display: block;
+    margin: 0 18px;
+    height: 66px;
+    line-height: 66px;
+    font-size: 19px;
+    text-decoration: none;
+
+}
+
+#gnb.gnbTopFix .submenu, #gnb.gnbTopFix .search{
+    margin-top: 0;
+    top: 58px;
+    border-top-width: 0;
+}
+
+#gnb .submenu {
+    display: none;
+    position: absolute;
+    top: 64.5px;
+    left: 0;
+    right: 0;
+    background-color: #FFF;
+    -webkit-box-shadow: 0 5px 5px rgb(0 0 0 / 10%);
+    box-shadow: 0 5px 5px rgb(0 0 0 /10%);
+    z-index: 1;
+    border-top: solid 2px #0a2b6d;
+    border-left: solid 1px #f0f0f0;
+
+}
+
+.menu_banner_l {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -590px;
+    z-index: 1;
+}
+
+.menu_banner_l .inner{
+    position: absolute;
+    right: 0;
+    text-align: right;
+}
+
+.menu_banner_l .inner a{
+    margin-top: 15px;
+    display: inline-block;
+    border: 1px solid #f0f0f0;
+}
+
+select, input, textarea, img {
+    vertical-align: middle;
+
+}
+
+img, fieldset, iframe{
+    border: 0;
+}
+
+.menu_banner_c {
+    position: absolute;
+    bottom: 15px;
+    right: 50%;
+    margin-right: -565px;
+    z-index: 1;
+}
+
+.menu_banner_r {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    margin-right: -590px;
+    z-index: 1;
+}
+
+.menu_banner_r .inner{
+    position: absolute;
+    left: 0;
+    text-align: left;
+}
+
+.menu_banner_r .inner a{
+    margin-top: 15px;
+    display: inline-block;
+    border: 1px solid #f0f0f0;
+}
+
+#gnb .submenu .lnb {
+    width: 1160px;
+    height: 315px;
+    border-right: solid 1px #f0f0f0;
+    margin: 0 auto;
+}
+
+#gnb .submenu .lnb > li {
+    overflow:hidden;
+    float: left;
+    width: 165px;
+    height: 100%;
+    padding: 30px 0 0 12px;
+    border-left: solid 1px #f0f0f0;
+    position: relative;
+}
+
+#gnb .submenu .lnb > li p {
+    font-family: "Noto Sans KR", sans-serif;
+    position: relative;
+    font-size: 17px;
+    color: #272727;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+#gnb .submenu .lnb > li ul {
+    zoom: 1;
+}
+
+#gnb .submenu .lnb > li li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#gnb .submenu .lnb > li li a {
+    font-size: 14px;
+    color: #2777;
+    position: relative;
+}
+
+#gnb .menu2_wrap {
+    float: left;
+}
+
+#gnb .menu1 > li, #gnb .menu2 > li{
+    float: left;
+}
+
+#gnb.gnbTopFix .menu1 >li > a, #gnb.gnbTopFix .menu2 > li > a{
+    height: 59px;
+    line-height: 58px;
+}
+
+#gnb.gnbTopFix .menu2 > li > a {
+    color: #d1d4de;
+}
+
+#gnb .menu2 > li > a {
+    color: #5e5e5e;
+}
+
+#gnb .submenu .lnb > li:last-child {
+    width: 168px;
+}
+
+#gnb .submenu .evt{
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    margin-left: -542px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+#gnb.gnbTopFix .btn_search {
+    height: 58px;
+}
+
+#gnb .btn_search {
+    float: right;
+    width: 36px;
+    height: 66px;
+}
+
+#gnb.gnbTopFix .btn_search .btn_ico {
+    margin-top: 12px;
+    background-image: url(https://image.jinhak.com/renewal2019/common/btn_search_on.png);
+}
+
+#gnb .btn_search .btn_ico {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin: 16px 2px 16px 0;
+    background: url(https://image.jinhak.com/renewal2019/common/btn_search.png) no-repeat center center;
+    text-indent: -9999em;
+}
+
+button{
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+button{
+    appearance: auto;
+    -webkit-writin-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: -internal-light-dark(rgb(239, 239, 239),rgb(59,59,59));
+    box-sizing: border-box;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118,118,118), rgb(133,133,133));
+    border-image: initial;
+
+}
+
+button span:first-child{
+    position: relative;
+}
+
+#gnb .search .core{
+    position: relative;
+    width: 1160px;
+    height: 169px;
+    margin: 0 auto;
+}
+
+#gnb .search .core .sch_align {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    text-align: center;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#gnb .search .searh_banner {
+    float: left;
+}
+
+.search_banner a{
+    display: block;
+    margin-right: 10px;
+    width: 170px;
+}
+
+.search_banner a img{
+    width: 100%;
+    height: 49px;
+}
+
+#gnb .search fieldset{
+    float: left;
+    display: block;
+    width: 715px;
+    text-align: center;
+}
+
+img, fieldset, iframe{
+    border: 0;
+}
+
+fieldset {
+    display: block;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+
+}
+
+hr, caption, legend {
+    overflow: hidden;
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+    width: 0;
+    height: 0;
+    border: 0;
+}
+
+legend {
+    display: block;
+    padding-inline-start: 2px;
+    padding-inline-end: 2px;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+}
+
+#gnb .search fieldset input[type="text"] {
+    border-color: #d4d4d4;
+    width: 630px;
+}
+
+input[type=text] {
+    letter-spacing: 0 !important;
+}
+
+select, input[type=text] {
+    letter-spacing: 0 !important;
+}
+
+.input_com2{
+    border: solid 1px transparent;
+    padding-left: 10px;
+    line-height: normal;
+    overflow: hidden;
+    border-color: #707070;
+    height: 49px;
+    padding-bottom: 3px;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+}
+
+input {
+    -webkit-wiritn-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255,255,255),rgb(59,59,59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118,118,118),rgb(133,133,133));
+    border-image: initial;
+}
+
+.btn_com8.bg1 {
+    background-color: #d4d4d4;
+    color: #272727;
+}
+
+.btn_com8 {
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    line-height: normal;
+    height: 49px;
+    font-size: 18px;
+    padding: 9px 20px 13px 20px;
+}
+
+#gnb .search .close {
+    position: absolute;
+    top: 18px;
+    right: 4px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url("https://image.jinhak.com/renewal2019/common/layer_close2.gif") no-repeat center center;
+    text-align: -9999em;
+}
+
+button span:first-child {
+    position: relative;
+}
+
+button span:first-child{
+    position: relative;
+
+}
+
+.mt15{
+    margin-top: 15px !important;
+}
+
+#main_Slider {
+    width: 100%;
+    position: relative;
+    z-index: 3;
+
+}
+
+#main_Slider .main_visual {
+    width: 100%;
+    height: 335px;
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select:none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#main_Slider .main_visual .slick_prev{
+    left: 50%;
+    margin-left: -654px;
+    background: url("https://image.jinhak.com/renewal2020/main/slider-prev.png") 50% 50% no-repeat;
+}
+
+#main_Slider .main_visual .slick-arrow {
+    opacity: 0;
+    width: 80px;
+    height: 130px;
+}
+
+#main_Slider .slick-arrow.slichk-prev {
+    left: 0;
+}
+
+#main_Slider .slick-arrow {
+    z-index: 10;
+}
+
+.slick-prev {
+    left: -25px;
+}
+
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+
+}
+
+/* element.style{
+    height: 335px;
+    overflow: hidden;
+} */
+
+#main_Slider .main_visual .slick-list {
+    height: 100%;
+}
+
+.slick-slider .slick-track, .slick-list {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* element.style {
+    opacity: 1;
+    width: 4640px;
+} */
+
+#main_Slider .main_visual .slick-list div{
+    height: 100%;
+    text-align: left;
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/* element.style {
+    background-color: rgb(213, 243, 214);
+    width: 1160px;
+    position: relative;
+    left: 0px;
+    top:0px;
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 500ms ease 0s;
+} */
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+#main_Slider .main_visual .slick-slide > div {
+    display: block;
+    margin: 0 auto;
+    width: 1160px;
+    position: relative;
+}
+
+/* element.style {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    display: block;
+    font-size: 40px;
+    color: #000;
+    font-weight: 600;
+} */
+
+.slick-slide img{
+    display: block;
+}
+
+
+
+
+#main_Slider .main_visual .slick-next {
+    right: 50%;
+    margin-right: -654px;
+    background: url("https://image.jinhak.com/renewal2020/main/slider-next.png") 50% 50% no-repeat;
+}
+
+#main_Slider .main_visual .slick-arrow {
+    opacity: 0;
+    width: 80px;
+    height: 130px;
+}
+
+#main_Slider .slick-arrow {
+    z-index: 10;
+}
+
+.slick-next {
+    right: -25px;
+}
+
+#main_Slider .main_visyal .dots-box {
+    bottom: 88px;
+}
+
+#main_Slider .dots-box {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 5;
+}
+
+#main_Slider .main_visual .dots-box .in_dots {
+    width: 980px;
+}
+
+#main_Slider .dots-box .in_dots {
+    width: 1160px;
+    margin: 0 auto;
+}
+
+#main_Slider .dots-box .slick-dots {
+    position: relative;
+    margin-right: 5px;
+    bottom: 5px;
+    float: left;
+    width: auto;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#main_Slider .main_visual .slick-dots li {
+    width: 13px;
+    height: 8px;
+}
+
+#main_Slider .dots-box .slick-dots li {
+    margin: 0 2px;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+
+#main_Slider .main_visual .slick-dots li button {
+    width: 100%;
+    height: 100%;
+    background-color: #9FA5A8;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+#main_Slider .dots-box .slick-dots li button {
+    padding: 0;
+}
+
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+#main_Slider .dots-box .controls {
+    float: left;
+}
+
+#main_Slider .dots-box .controls > button.pause {
+    display: block;
+    background: url("https://image.jinhak.com/renewal2020/main/btn_visual_stop.png") 0 0 no-repeat;
+
+}
+
+#main_Slider .dots-box .controls > button {
+    float: left;
+    display: none;
+    width: 20px;
+    height: 20px;
+    font-size: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+#main_Slider .dots-box .controls > button.play {
+    background: url("https://image.jinhak.com/renewal2020/main/btn_visual_play.png") 0 0 no-repeat;
+
+}
+
+#main_Slider .sub_visual {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    margin-right: -580px;
+    width: 565px;
+    z-index: 5;
+}
+
+#main_Slider .sub_visual .slick-prev {
+    top: 237px;
+    left: 99px;
+    background: url("https://image.jinhak.com/renewal2020/main/btn_prev_type2.gif") 0 0 no-repeat;
+}
+
+#main_Slider .sub_visual .slick-arrow {
+    width: 6px;
+    height: 11px;
+}
+
+
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main_Slider .sub_visual .customPaging {
+    position: absolute;
+    bottom: 105px;
+    left: 90px;
+    width: 80px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+#main_Slider .sub_visual .customPaging li {
+    display: none;
+}
+
+#main_Slider .sub_visual .customPaging li span {
+    font-size: 13px;
+    color: #888;
+    vertical-align: 1px;
+}
+
+#main_Slider .dots-box .controls > button.pause {
+    display: block;
+    background: url("https://image.jinhak.com/renewal2020/main/btn_visual_stop.png") 0 0 no-repeat;
+}
+
+#main_Slider .sub_visual .controls .pause {
+    display: none;
+}
+
+#main_Slider .dots-box .controls > button.play {
+    background: url("https://image.jinhak.com/renewal2020/main/btn_visual_play.png") 0 0 no-repeat;
+}
+
+#main_Slider .sub_visual .controls .play {
+    display: none;
+}
+
+.container.at_main {
+    position: relative;
+    margin-top: 86px;
+    padding-bottom: 0;
+}
+
+.container {
+    padding-bottom: 50px;
+}
+
+.contents, #contarea {
+    position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.container .section {
+    position: relative;
+}
+
+.fast_navi {
+    position: absolute;
+    top: -135px;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background: url("https://image.jinhak.com/renewal2020/main/top_m_round.png") 0 0 no-repeat;
+    z-index: 5;
+}
+
+.fast_navi .navi {
+    margin: 25px auto 0;
+    padding-left: 60px;
+}
+
+.fast_navi .navi li {
+    float: left;
+    width: 172px;
+    text-align: center;
+}
+
+.fast_navi .navi li a {
+    display: inline-block;
+}
+
+.fast_navi .navi li a span.obj {
+    padding-bottom: 0;
+    height: 45px;
+}
+
+.fast_navi .navi li a span {
+    display: block;
+    padding-bottom: 3px;
+    font-size: 14px;
+    color: #272727;
+    position: relative;
+}
+
+.fast_navi .navi li a span.obj img {
+    position: relative;
+    top: 0;
+    -webkit-transiton: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.container .section {
+    position: relative;
+}
+
+.container .mid_center .cont_slider.full {
+    padding: 20px 0;
+    width: 100%;
+    height: 525px;
+    border: none;
+}
+
+.container .mid_center .cont_slider {
+    float: right;
+    padding: 20px;
+    width: 568px;
+    height: 408px;
+    border: 1px solid #ECECEC;
+    overflow: hidden;
+}
+
+.cont_slider {
+    height: 415px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cont_slider .ui-slider-tabs-list-container {
+    position: relative;
+    margin: 0 64px 0 0 !important;
+    overflow: hidden;
+}
+
+
+.cont_slider .pager {
+    margin-bottom: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.cont_slider .pager li {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.cont_slider .pager li.selected a {
+    color: #125fb6;
+}
+
+.cont_slider .pager li a {
+    display: block;
+    padding-top: 3px;
+    font-size: 15px;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+
+
+.container .mid_cnter .cont_slider.full .ui-slider-tabs-content-container {
+    margin: 0px;
+}
+
+.cont_slider .ui-slider-tavs-content-container {
+    margin: 0 -20px;
+}
+
+
+.list_thume_box > div.top {
+    margin-bottom: 15px;
+}
+
+.list_thume_box .thume217 > div .thume:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+.list_thume_box .thume217 > div .thume {
+    margin: 0 0 20px 18px;
+    width: 217px;
+}
+
+.list_thume_box > div .thume {
+    display: block;
+    float: left;
+    margin-right: 30px;
+    width: 138px;
+}
+
+.list_thume_box .thume217 > div .thume .pic {
+    height: 124px;
+}
+
+.list_thume_box > div .thume .pic {
+    width: 100%;
+    height: 97px;
+    overflow: hidden;
+    position: relative;
+}
+
+.list_thume_box img {
+    width: 100%;
+    height: 100%;
+}
+
+.list_thume_box > div .thum .pic .time {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    display: block;
+    padding: 0px 5px;
+    font-size: 11px;
+    color: #fff;
+    background-color: #010101;
+    z-index: 1;
+}
+
+.list_thume_box > div .thume .txt {
+    width: 100%;
+    position: relative;
+}
+
+.list_thume_box.thume217 > div .thume .txt .subj {
+    height: 43px;
+    font-size: 15px;
+}
+
+.list_thume_box > div .thume .subj {
+    font-size: 13px;
+    color: #272727;
+    line-height: 1.38462;
+    height: 38px;
+    padding-top: 3px;
+    overflow: hidden;
+}
+
+.list_thume_box > div .thume .txt .tag {
+    margin-top: 3px;
+}
+
+.list_thume_box > div .thume .tag {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list_thume_box > div .thume .tag span {
+    display: inline-block;
+    padding: 2px 3px 3px 3px;
+    font-size: 13px;
+    color: #005fc1;
+}
+
+.list_thume_box > div .thume .txt .etc {
+    margin-top: 3px;
+}
+
+.list_thume_box .thume217 > div .thume {
+    margin: 0 0 20px 18px;
+    width: 217px;
+}
+
+.list_thume_box > div .thume {
+    display: block;
+    float: left;
+    margin-right: 30px;
+    width: 138px;
+}
+
+.list_thume_box > div .thume .txt .subj {
+    color: #272727;
+}
+
+.list_thume_box > div .thume .txt .etc p {
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0;
+    margin-right: 5px
+}
+
+/* element.style {
+    display: none;
+    left: 1160px;
+    width: 1160px;
+} */
+
+.list_thume_box .thume175 > div .tume:nth-child(6n+1) {
+    margin-left: 0;
+}
+
+.list_thume_box .thume175 > div .thume {
+    margin: 0 0 15px 18px;
+    width: 178px;
+}
+
+.list_thume_box .thume175 > div .thume .pic {
+    height: 124px;
+}
+
+.list_thume_box > div .thume .pic {
+    width: 100%;
+    height: 97px;
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* element.style {
+    top: 111.5px;
+} */
+
+
+.cont_slider .ui-slider-tabs-leftPaneArrow {
+    right: 26px;
+    border-radius: 2px 0 0 2px;
+    background-image: url("https://image.jinhak.com/renewal2020/main/btn_prev_type1.gif");
+}
+
+.cont_slider .ui-slider-tavs-leftPaneArrow, .cont_slider .ui-slider-tabs-rightPaneArrow {
+    position: absolute;
+    top: 20px !important;
+    z-index: 1;
+    width: 26px;
+    height: 26px;
+    text-indent: -9999em;
+    background-color: #FFF;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+.container .mid_AD_Box {
+    margin: 20px 0;
+    border: 1px solid #ECECEC;
+}
+
+.container .mid_AD_Box a {
+    display: block;
+    height: 72px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .mid_AD_Box a img {
+    width: 100%;
+}
+
+.container .mid_cont_Box .contBox:first-child {
+    margin-left: 0;
+}
+
+.container .mid_cont_Box .contBox {
+    float: left;
+    margin-left: 22px;
+    padding: 20px;
+    width: 372px;
+    height: 412px;
+    background-color: #fff;
+    border: 1px solid #ECECEC;
+    position: relative;
+}
+
+.container .mid_cont_Box .contBox .title {
+    padding-bottom: 20px;
+    font-size: 15px;
+    color: #272727;
+    font-weight: 600;
+}
+
+.list_thume_box .atStyle {
+    margin-bottom: 15px;
+}
+
+.list_thume_box .atStyle > div:first-child {
+    margin-top: 0;
+}
+
+.list_thume_box .atStyle > div {
+    margin-top: 10px;
+}
+
+.list_thume_box .atStyle > div .thume {
+    margin-right: 0;
+    width: 100%;
+}
+
+.list_thume_box > div .thume {
+    display: block;
+    float: left;
+    margin-right: 30px;
+    width: 138px;
+}
+
+.list_thume_box .atStyle > div .thume .pic {
+    float: left;
+    margin-right: 10px;
+    width: 106px;
+    height: 75px;
+}
+
+.list_thume_box > div .thume .pic {
+    width: 100%;
+    height: 97px;
+    overflow: hidden;
+    position: relative;
+}
+
+.list_thume_box .atStyle > div .thume .txt {
+    float: left;
+    width: 210px;
+    height: 75px;
+    position: relative;
+}
+
+.list_thume_box > div .thume .txt {
+    width: 100%;
+    position: relative;
+}
+
+.list_review {
+    padding-top: 10px;
+    border-top: 1px solid #ECECEC;
+}
+
+.container .mid_cont_Box .contBox .more_ {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.list_book.blacklabel {
+    padding-top: 5px;
+}
+
+.list_book {
+    padding-top: 10px;
+
+}
+
+.list_book li {
+    float: left;
+    margin-bottom: 25px;
+    width: 109px;
+    text-align: center;
+}
+
+.list_book li.thume {
+    display: block;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.list_book li span {
+    margin-top: 10px;
+    display: block;
+    height: 34px;
+    font-size: 13px;
+    color: #272727;
+}
+.list_book li.thume img {
+    width: 78px;
+    height: 98px;
+}
+
+.list_book li.thume .over_quick {
+    opacity: 0;
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    background: #fff;
+    z-index: 1;
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-size: 0;
+}
+
+.container .mid_cont_Box .contBox .title {
+    padding-bottom: 20px;
+    font-size: 15px;
+    color: #272727;
+    font-weight: 600;
+}
+
+.container .mid_AD_Box .list {
+    border: none;
+}
+
+.container .mid_AD_Box .list a {
+    float: left;
+    display: block;
+    width: 25%;
+    height: 55px;
+    position: relative;
+}
+
+.container .univ_Ad_Box {
+    margin: 20px 0 35px 0;
+    border: 1px solid #ECECEC;
+}
+
+.container .univ_Ad_Box > div {
+    float: left;
+    display: block;
+    width: 192px;
+    height: 72px;
+    text-align: center;
+    position: relative;
+}
+
+.container .univ_Ad_Box > div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.container.bg_dark {
+    padding-top: 40px;
+    padding-bottom: 0;
+    background-color: #f4f5f9;
+}
+
+.container {
+    padding-bottom: 50px;
+}
+
+.container.bg_dark .title {
+    margin-bottom: 40px;
+    border-top: 1px dotted #272727;
+    position: relative;
+}
+
+.container.bg_dark .title span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -16.5px;
+    margin-left: -82px;
+    display: block;
+    width: 164px;
+    font-family: "Spoqa Han Sans", sans-serif;
+    font-size: 22px;
+    color: #272727;
+    font-weight: 600;
+    text-align: center;
+    background-color: #F9F9F9;
+}
+
+.best_list {
+    padding-bottom: 20px;
+}
+
+.best_list > li:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+.best_list > li {
+    float: left;
+    margin: 0 0 20px 22px;
+    width: 214px;
+    height: 251px;
+    background-color: #fff;
+    position: relative;
+    top: 0;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+}
+
+.best_list > li a {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.best_list > li.thume {
+    display: block;
+    margin-bottom: 0;
+    position: relative;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.best_list > li.thume img {
+    display: block;
+    width: 100%;
+}
+
+.best_list > li.thume .time {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    display: block;
+    padding: 0px 5px;
+    font-size: 11px;
+    color: #fff;
+    background-color: #010101;
+    z-index: 1;
+}
+
+.best_list > li .info {
+    padding: 14px 20px 0px 20px;
+}
+
+.best_list > li .subj {
+    height: 38px;
+    font-size: 15px;
+    color: #272727;
+    line-height: 1.33333;
+    overflow: hidden;
+}
+
+.best_list > li .tag {
+    margin-top: 10px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.best_list > li .tag span {
+    padding: 0 3px;
+}
+
+.best_list > li .tag span {
+    display: inline-block;
+    padding: 2px 3px 3px 3px;
+    font-size: 13px;
+    color: #005fc1;
+}
+
+.best_list > li .etc {
+    margin-top: 10px;
+}
+
+.best_list > li .etc p {
+    margin-right: 5px;
+    display: inline-block;
+    font-size: 13px;
+    color: #666;
+    letter-spacing: 0;
+}
+
+.bn_hot_univ {
+    padding: 25px 0;
+}
+
+meta {
+    display: none;
+}
+
+title {
+    display: none;
+}
+
+
+
+link {
+    display: none;
+}
+
+script {
+    display: none;
+}
+
+.iframe {
+    padding-bottom: 0px;
+}
+
+.iframe {
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.iframePopup.dimm, .layerPopup.dimm {
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+}
+
+.iframePopup.fixed, .layerPopup.fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 20;
+}
+
+.iframePopup, .layerPopup {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 15;
+}
+
+element.style {
+    top: 300px;
+}
+
+.ifamePopup.fixed.w430 .inWrap, .layerPopup.fixed.w430 .inWrap {
+    left: 50%;
+    right: auto;
+    width: 430px !important;
+    -webkit-transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px));
+    transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px));
+}
+
+.ifamePopup.w430 .inWRap, .layterPopup.w430 .inWrap {
+    width: 430px !important;
+}
+
+.iframePopup.fixed .inWRap, .layerPopup.fixed .inWrap {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px));
+    transform: translate(calc(-50% + 0.5px), calc(-50% + 0.5px));
+}
+
+.iframePopup > .inWrap, .layerPopup > .inWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px 20px;
+    text-align: left;
+    letter-spacing: 0px;
+    border: 1px solid #272727;
+    background-color: #fff;
+}
+
+.layerPopup > .inwrap {
+    letter-spacing: -.04em;
+}
+
+.pb20 {
+    padding-bottom: 20px !important;
+}
+
+.btn-Style.center, .tag_Style.center, .p_Style.center, .ol_Style.center, .ul_Style.center, .dl_Style.center {
+    text-align: center;
+}
+
+.btn-Style.fs_18, .tag_Style.fs_18, .p_Style.fs_18, .ol_Style.fs_18, .ul_Style.fs_18, .dl_Style.fs_18 {
+    font-size: 18px !important;
+    line-height: 28px !important;
+}
+
+.btn-Style, .tag_Style, .p_Style, .ol_Style, .ul_Style, .dl_Style {
+    color: #101010;
+    position: relative;
+}
+
+.btn-Align.center {
+    text-align: center;
+}
+
+.iframePopup .btn-Align, .layerPopup .btn-Align {
+    margin-top: 20px;
+}
+
+.iframePopup > .inWrap *, .layerPopup > .inWrap * {
+    letter-spacing: -.04em;
+}
+
+.btn-Align {
+    margin-top: 20px;
+}
+
+span.btn-Style.r5, a.btn-Style.r5, button.btn-Style.r5, input.btn-Style.r5 {
+    border-radius: 5px;
+}
+
+span.btn-Style.blue01, a.btn-Style.blue01, button.btn-Style.blue01, input.btn-Style.blue01 {
+    color: #fff;
+    background-color: #1B73D4;
+    border: 1px solid #1B73D4;
+}
+
+span.btn-Style.h-45, a.btn-Style.h-45, button.btn-Style.h-45, input.btn-Style.h-45 {
+    padding: 0 20px;
+    height: 45px;
+    line-height: 44px;
+}
+
+span.btn-Style.w100, a.btn-Style.w100, button.btn-Style.w100, input.btn-Style.w100 {
+    width: 100px;
+}
+
+.btn-Style.r5, .tag_Style.r5, .p_Style.r5, .ol_Style.r5, .ul_Style.r5, .dl_Style.r5 {
+    border-radius: 5px;
+}
+
+.btn-Style.r5, .tag_Style.r5, .p_Style.r5, .ol_Style.r5, .ul_Style.r5, .dl_Style.r5 {
+    display: inline-block;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.r5 {
+    border-radius: 5px !important;
+}
+
+.btn-Style, .tag_Style, .p_Style, .ol_Style, .ul_Style, .dl_Style {
+    color: #101010;
+    position: relative;
+}
+
+/* div class=layerPopup fixed w430 dimm 안에 있는 div class close부터 시작
+ */
+
+ .iframePopup .close, .layerPopup .close {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     font-size: 0;
+     z-index: 2;
+     cursor: pointer;
+ }
+
+ .iframePopup .close a, .iframePopup .close button, .layerPopup .close a, .layerPopup .close button {
+     display: inline-block;
+     margin: 0;
+     padding: 0;
+     width: 22px;
+     height: 22px;
+     background: url("https://image.jinhak.com/renewal2019/common/layer_close.png") no-repeat center top;
+     background-size: 100%;
+ }
+
+ .iframePopup .close a span, .iframePopup .close button span, .layerPopup .close a span, .layerPopup .close button span {
+     font-size: 0px !important;
+     color: #fff;
+ }
+
+ button span:first-child {
+     position: relative;
+ }
+
+ .pb15 {
+     padding-bottom: 15px !important;
+ }
+
+ .btn-Style.fs_21, .tag_Style.fs_21, .p_Style.fs_21, .ol_Style.fs_21, .ul_Style.fs_21, .dl_Style.fs_21 {
+     font-size: 21px !important;
+     line-height: 31px !important;
+ }
+
+ .mb10 {
+     margin-bottom: 10px !important;
+ }
+
+ b {
+     font-weight: bold;
+ }
+
+ .btn-Style.fs_21 *, .tag_Style.fs_21 *, .p_Style.fs_21 *, .ol_Style.fs_21 *, .ul_Style.fs_21 *, .dl_Style.fs_21 * {
+     font-size: inherit;
+     line-height: inherit;
+ }
+
+ .btn-Style.fs_15, .tag_Style.fs_15, .p_Style.fs_15, .ol_Style.fs_15, .ul_Style.fs_15, .dl_Style.fs_15 {
+     font-size: 15px !important;
+     line-height: 25px !important;
+ }
+
+ span.btn-Style.blue02, a.btn-Style.blue02, button.btn-Style.blue02, input.btn-Style.blue02 {
+     color: #fff;
+     background-color: #0A2B6D;
+     border: 1px solid #0A2B6D;
+ }
+
+ span.btn-Style.h-45, a.btn-Style.h-45, button.btn-Style.h-45, input.btn-Style.h-45 {
+     padding: 0 20px;
+     height: 45px;
+     line-height: 44px;
+ }
+
+ span.btn-Style, a.btn-Style, button.btn-Style, input.btn-Style {
+     display: inline-block;
+     padding: 15px 20px;
+     font-size: 16px;
+     text-align: center;
+     vertical-align: 0;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
+
+ .btn-Style.fs_18, .tag_Style.fs_18, .p_Style.fs_18, .ol_Style.fs_18, .ul_Style.fs_18, .dl_Style.fs_18 {
+     font-size: 18px !important;
+     line-height: 28px !important;
+ }
+
+ span.btn-Style.grey01-line, a.btn-Style.grey01-line, button.btn-Style.grey01-line, input.btn-Style.grey01-line {
+     color: #818181;
+     background-color: #fff;
+     border: 1px solid #c2c2c2;
+ }
+
+ span.btn-Style.h-45, a.btn-Style.h-45, button.btn-Style.h-45, input.btn-Style.h-45 {
+     padding: 0 20px;
+     height: 45px;
+     line-height: 44px;
+ }
+
+ span.btn-Style.w100, a.btn-Style.w100, button.btn-Style.w100, input.btn-Style.w100 {
+     width: 100px;
+ }
+
+ span.btn-Style.blue01, a.btn-Style.blue01, button.btn-Style.blue01, input.btn-Style.blue01 {
+     color: #fff;
+     background-color: #1B73D4;
+     border: 1px solid #1B73D4;
+ }
+
+ body {
+     background-color: #FFF;
+     word-break: break-all;
+     text-align: center;
+     margin: 0;
+     padding: 0;
+ }
+
+ element.style {
+     background: #2797ad;
+ }
+ 
+ .bn_toop_full {
+     position: relative;
+ }
+
+ .bn_top_full .close {
+     position: absolute;
+     top: 10px;
+     right: 50%;
+     margin-right: -580px;
+     display: block;
+     font-size: 0;
+     width: 17px;
+     height: 17px;
+     background: url("https://image.jinhak.com/renewal2020/btn/btn_circle_close_bk.png") 0 0 no-repeat;
+
+ }
+
+ #wrapper {
+     min-width: 1160px;
+     overflow: hidden;
+     position: relative;
+ }
+
+ #skip {
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 999;
+ }
+
+ #skip a {
+     position: absolute;
+     top: 0;
+     left: -1000em;
+ }
+
+ #main_Slider {
+     width: 100%;
+     position: relative;
+     z-index: 3;
+ }
+
+ #main_slider .main_visual {
+     width: 100%;
+     height: 335px;
+ }
+
+#footer {
+    border-top: solid 1px #f0f0f0;
+}
+
+#footer .core {
+    position: relative;
+    width: 1160px;
+    margin: 0 auto;
+    padding: 40px 0 50px 0;
+    text-align: left;
+}
+
+#footer .link {
+    zoom: 1;
+}
+
+#footer .link > li {
+    float: left;
+    position: static;
+}
+
+#footer .link > li a, #footer .link > li button {
+    font-size: 14px;
+    padding: 0;
+    color: #272727;
+}
+
+
+#footer .link > li a span, #footer .link > li button span {
+    font-size: inherit;
+    color: inherit;
+}
+
+.more a span, .more button span {
+    font-size: 12px;
+    color: #666;
+}
+
+#footer .link > li .layer {
+    margin: -48px 0 0 -47px;
+}
+
+#footer .layer {
+    display: none;
+    padding: 10px 5px;
+    position: absolute;
+    background-color: #fff;
+    border: solid 1px #ddd;
+    z-index: 10;
+}
+
+#footer .layer li {
+    float: left;
+    overflow: hidden;
+}
+
+#footer .layer a, #footer .layer p {
+    font-size: 11px !important;
+    color: #272727;
+}
+
+#footer .info {
+    zoom: 1;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #272727;
+}
+
+#footer .info span:first-child {
+    margin-left: 0;
+}
+
+#footer .info span {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+#footer .info .bar {
+    margin-left: -3px;
+}
+
+#footer .info span em {
+    padding-right: 7px;
+}
+
+em, address, i {
+    font-style: normal;
+}
+
+em {
+    font-style: italic;
+}
+
+#footer .copyright {
+    margin-top: 9px;
+    font-size: 13px;
+    color: #272727;
+}
+
+.fc_cloud {
+    color: #999 !important;
+}
+
+#footer .copyright .mail {
+    padding-left: 8px;
+}
+
+#footer .copyright .sns {
+    font-size: 0;
+    line-height: 0;
+}
+
+#footer .copyright .sns img {
+    margin: -8px 0 0 8px;
+}
+
+#footer .mark {
+    position: absolute;
+    top: 75px;
+    right: 0;
+}
+
+#footer .mark img {
+    margin-left: 5px;
+}
+
+#footer .mark .more {
+    text-align: center;
+    position: relative;
+}
+
+#footer .mark .layer {
+    bottom: 40px;
+    left: 50%;
+    width: 255px;
+    text-align: left;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+element.style {
+    display: none;
+    bottom: 25px;
+    position: fixed;
+}
+
+.btn_gotop {
+    position: fixed;
+    left: 50%;
+    margin-left: 600px;
+    bottom: 241px;
+    z-index: 2;
+}
+
+.btn_gotop button {
+    display: inline-block;
+    vertical-align: middle;
+    border: solid 1px transparent;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+    line-height: normal;
+    width: 42px;
+    height: 42px;
+    border: 1px #d8d8d8;
+    background: url("https://image.jinhak.com/renewal2019/common/arr2_up.png") no-repeat center center #FFF;
+    text-indent: -9999em;
+}
+
+/* element.style {
+    top:410px;
+    left: 5%;
+    z-index: 14;
+    display: none;
+} */
+
+.iframePopup.is_show, .layerPopup.is_show {
+    display: block;
+}
+
+.iframePopup.default .inWrap, .layerPopup.default .inWrap {
+    padding: 0;
+    overflow: visible;
+    background-color: transparent;
+    border:none;
+}
+
+.iframePopup > .inWrap.default, .layerPopup > .inWrap.default {
+    background-color: transparent;
+    border: none;
+}
+
+.layerPopup .today {
+    background-color: transparent !important;
+}
+
+.iframePopup .today, .layerPopup .today {
+    position: absolute;
+    bottom: -28px;
+    left: -1px;
+    right: -1px;
+    padding: 5px 0px;
+    text-align: right;
+    border-top: none;
+}
+
+.today {
+    background: #ababab;
+    height: 24px;
+    position: relative;
+}
+
+.iframePopup .today a, .iframePopup .today button, .layerPopup .today a, .layerPopup .today button {
+    padding-right: 20px;
+    background: url("https://image.jinhak.com/renewal2019/common/layer_close.png") right bottom no-repeat;
+    background-size: 14px;
+}
+
+#k_satInfo .inWrap, .k_satInfo .inWrap {
+    top: 470px;
+    left: 50%;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+#k_satInfo .obj, .k_satInfo .obj {
+    position: relative;
+    z-index: 1;
+}
+
+#k_satInfo .today, .k_satInfo .today {
+    bottom: 5px;
+    left: auto;
+    right: 50px;
+    width: 70px;
+    text-align: center;
+    background-color: #D9D9D9 !important;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+#k_satInfo .today button, .k_satInfo .today button {
+    padding-top: 18px;
+    padding-right: 0;
+    background-position: center 5px;
+}
+
+#k_satInfo .today button span, .k_satInfo .today button span {
+    font-size: 11px;
+    line-height: 21px;
+    line-height: 11px !important;
+}
+
+ins {
+    text-decoration: underline;
+}
+
+iframe {
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+#bn_bot_fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    height: 51px;
+    background-color: #929dbb;
+}
+
+#bn_bot_fixed .ad {
+    position: relative;
+    z-index: 1;
+}
+
+#bn_bot_fixed .close {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 50%;
+    margin-left: 580px;
+}
+
+#bn_bot_fixed .close button {
+    display: block;
+    width: 17px;
+    height: 17px;
+    text-indent: -9999em;
+    background: url("https://image.jinhak.com/renewal2019/main/layer_close1.gif") no-repeat center top;
+}

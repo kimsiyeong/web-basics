@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합격예측은 진학사!</title>
+    <!-- css리셋 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <!-- css 링크 -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- 자바스크립트 링크 -->
+    <script src="./js/main.js"></script>
+    <!-- 파비콘 -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="layerPopup fixed w430 dimm" id="CommonAlert">
+        <div class="inWrap">
+    
+            <!-- contents -->
+            <div class="pb20">
+                <p class="p_Style fs_18 center" id="CommonAlertTxt"></p> 
+            </div>
+            <!-- // contents -->
+    
+            <div class="btn-Align center">
+                <button type="button" class="btn-Style h-45 w100 blue01 r5" onclick="fnCommonLayerOut('CommonAlert');">확인</button>
+            </div>
+    
+        </div>
+    </div>
+    <div class="layerPopup fixed w430 dimm" id="CommonAlert2">
+        <div class="inWrap" style="top:300px">
+            <!-- contents -->
+            <div class="close"><button type="button" id="CommonAlert2Close" onclick="fnCommonLayerOut('CommonAlert2');"><span>팝업 닫기</span></button></div>
+            <div class="pb15">
+                <p class="p_Style fs_21 center mb10">
+                    <b id="CommonAlert2Txt1">
+    
+                    </b>
+                </p>
+                <p id="CommonAlert2Txt2" class="p_Style fs_15 center"></p>
+            </div>
+            <!-- // contents -->
+    
+            <div class="btn-Align center">
+                <a id="CommonAlert2Txt3" href="javascript:fnCommonLayerHref();" class="btn-Style h-45 blue02 r5"></a>
+            </div>
+        </div>
+    </div>
+    <div class="layerPopup fixed w430 dimm" id="CommonConfirm">
+        <div class="inWrap">
+    
+            <!-- contents -->
+            <div class="pb20">
+                <p class="p_Style fs_18 center" id="CommonConfirmTxt"></p>
+            </div>
+            <!-- // contents -->
+    
+            <div class="btn-Align center">
+                <button type="button" class="btn-Style h-45 w100 grey01-line r5" onclick="fnCommonLayerOut('CommonConfirm');">취소</button>
+                <button type="button" class="btn-Style h-45 w100 blue01 r5" onclick="fnCommonLayerHref();">확인</button>
+            </div>
+    
+        </div>
+    </div>
+    <div class="layerPopup fixed w430 dimm" id="CommonConfirmfn">
+        <div class="inWrap">
+    
+            <!-- contents --> 
+            <div class="pb20">
+                <p class="p_Style fs_18 center" id="CommonConfirmfnTxt"></p>
+            </div>
+            <!-- // contents -->
+    
+            <div class="btn-Align center">
+                <button type="button" class="btn-Style h-45 w100 grey01-line r5" onclick="fnCommonLayerOut('CommonConfirmfn');">취소</button>
+                <button type="button" class="btn-Style h-45 w100 blue01 r5" onclick="fnCommonLayerfnCall();">확인</button>
+            </div>
+    
+        </div>
+    </div>
+    
+    <!-- 헤더 시작 -->
+    <div id="header">
+        <div id="util">
+            <div class="core">
+                <ul class="link">
+                    <li>
+                        <a href="https://member.jinhak.com/MemberV3/MemberJoin/MemberLogIn.aspx?ReturnSite=JM&amp;ReturnURL=http%3a%2f%2fwww.jinhak.com%2findex.aspx">로그인</a>
+                    </li>
+                    <li>
+                        :before
+                        <a href="https://member.jinhak.com/MemberV3/MemberJoin/TotalIntro.aspx?ReturnSite=JM&amp;ReturnURL=http%3a%2f%2fwww.jinhak.com%2findex.aspx">회원가입</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="link(7,4);">이벤트</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" onclick="link(7);">고객센터</a>
+                        <div class="more">
+                            <ul class="smenu">
+                                <li>
+                                    <a href="javascript:void(0)" onclick="link(7,1);">공지사항</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="link(7,2);">자주하는질문</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="link(7,3);">1:1 문의</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="link(7,4);">이벤트</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        
+                    마이페이지
+					<div class="more">
+                        <ul class="smenu arr" id="mypageMenu">
+                            <li>
+                                <a href="javascript:void(0)" class="selected">성적관리</a>
+                                <ul style="display: block;">
+									<li><a href="javascript:void(0)" onclick="link(6,1,1);">출신고교·기본정보</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,1,2);">학생부교과</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,1,3);">학생부비교과</a></li>
+									<li><a href="javascript:void(0)" onclick="link(5,2,2);">수능학력평가</a></li>
+								</ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">활동관리</a>
+                                <ul>
+									<li><a href="javascript:void(0)" onclick="link(6,2,1);">클립한 정보</a></li>
+									
+                                    <li><a href="javascript:void(0)" onclick="link(6,2,5);">리뷰·배틀 관리</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,2,3);">자소서월드 관리</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,2,4);">나의 Q&amp;A 관리</a></li>
+								</ul>
+                            </li>
+                            <li>
+								<a href="javascript:void(0)">결제쿠폰관리</a>
+								<ul>
+									<li><a href="javascript:void(0)" onclick="link(6,3,1);">결제/배송조회</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,3,2);">취소/반품조회</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,3,3);">쿠폰관리</a></li>
+								</ul>
+							</li>
+                            <li>
+								<a href="javascript:void(0)">회원정보관리</a>
+								<ul>
+									<li><a href="javascript:void(0)" onclick="link(6,4,1);">배송지/환불계좌</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,4,2);">메일/문자 수신설정</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,4,3);">회원정보 수정</a></li>
+									<li><a href="javascript:void(0)" onclick="link(6,4,4);">회원탈퇴 신청</a></li>
+								</ul>
+							</li>
+                            
+                        </ul>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="header_logo">
+            <div class="core">
+		        <h1><a href="https://www.jinhak.com">JINHAK</a></h1>
+
+		        <!-- target -->
+		        <ul class="target">
+			        <li id="JinhakTarget1" class=""><a href="javascript:void(0)" onclick="setCookieTop('JinhakTarget', '1' , 30);">고3N수</a></li>
+			        <li id="JinhakTarget2" class="selected"><a href="javascript:void(0)" onclick="setCookieTop('JinhakTarget', '2' , 30);">고12</a></li>
+			        <li id="JinhakTarget3" class=""><a href="javascript:void(0)" onclick="setCookieTop('JinhakTarget', '3' , 30);">선생님</a></li>
+		        </ul>
+		        <!-- // target -->
+
+		        <!-- 광고 -->
+		        <script>
+		            $(document).ready(function () {
+		            	$(".sliderHeaderAd").bxSlider({
+		            	    touchEnabled: false,
+                            auto:true,
+		                    pager: false,
+		                    prevSelector: '.btn_prev',
+		                    nextSelector: '.btn_next',
+		                    randomStart: true
+		                });
+		            });
+		        </script>
+		        <div class="ad">
+			        <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 43px;"><ul class="sliderHeaderAd" style="width: 2215%; position: relative; transition-duration: 0s; transform: translate3d(-354px, 0px, 0px);"><li style="float: left; list-style: none; position: relative; width: 177px;" class="bx-clone" aria-hidden="true"><script type="text/javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/19main@gnb_top2"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/19main@gnb_top2?ads_no=16130&amp;cmp_no=4109&amp;img_no=13412" target="_self"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/jinhaktong191022_177_43.gif" width="177" height="43" border="0"></a></li>
+				        <li style="float: left; list-style: none; position: relative; width: 177px;" aria-hidden="true"><script type="text/javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/19main@gnb_top1"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/19main@gnb_top1?ads_no=17300&amp;cmp_no=4414&amp;img_no=14457" target="_self"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/ingang210318_177_43.jpg" width="177" height="43" border="0"></a></li><li style="float: left; list-style: none; position: relative; width: 177px;" aria-hidden="false"><script type="text/javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/19main@gnb_top2"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/19main@gnb_top2?ads_no=16130&amp;cmp_no=4109&amp;img_no=13412" target="_self"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/jinhaktong191022_177_43.gif" width="177" height="43" border="0"></a></li>
+			        <li style="float: left; list-style: none; position: relative; width: 177px;" class="bx-clone" aria-hidden="true"><script type="text/javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/19main@gnb_top1"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/19main@gnb_top1?ads_no=17300&amp;cmp_no=4414&amp;img_no=14457" target="_self"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/ingang210318_177_43.jpg" width="177" height="43" border="0"></a></li></ul></div><div class="bx-controls"></div></div>
+			        <p class="btn_prev"><a class="bx-prev" href="">Prev</a></p>
+			        <p class="btn_next"><a class="bx-next" href="">Next</a></p>
+		        </div>
+		        <!-- // 광고 -->
+	        </div>
+        </div>
+        <div id="gnb">
+            <div class="core">
+                <p class="btn_all"><a href="#layerSitemap" class="btn_ico layerFocus" onclick="viewTotalTab(); return false">전체 메뉴 보기</a></p>
+                
+                <!-- s: 메뉴 Top -->
+                
+                <!-- menu (왼쪽 그룹) -->
+                <ul class="gnb menu1">
+                    
+                    <li class="MenuDepth1 m1_3"><a href="javascript:void(0)">수시정보</a> <!-- 현재메뉴 selected -->
+                        <div class="submenu">
+                            
+                            <!-- 좌측 배너 -->
+                            
+                            <!-- 좌측 배너 -->
+                            <div class="menu_banner_l">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Left"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Left?ads_no=16414&amp;cmp_no=4149&amp;img_no=13683" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/dongguk200327_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 좌측 배너 -->
+        
+                            <!-- 중간 배너 -->
+                            <div class="menu_banner_c">
+                                <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Bottom"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Bottom?ads_no=17222&amp;cmp_no=4168&amp;img_no=14383" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/kookmin210114_344x65.jpg" width="344" height="65" border="0"></a>
+                            </div>
+                            <!-- // 중간 배너 -->
+        
+                            <!-- 우측 배너 -->
+                            <div class="menu_banner_r">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Right"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Right?ads_no=16466&amp;cmp_no=4188&amp;img_no=13723" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/shinhan200428_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 우측 배너 -->
+        
+                            <ul class="lnb">
+                                <li class="MenuDepth2 m2_1">
+                                    <p>만만한 입시</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(3,8,1);">고1</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(3,8,2);">고2</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(3,8,3);">입시전략</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_2">
+                                    <p>학생부 입력</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(3,2,1);">출신고교</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(3,2,2);">학생부교과</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(3,2,3);">학생부비교과</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_3"> <!-- 현재메뉴 selected -->
+                                    <p>성적분석</p>
+                                    <ul>
+                                        
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(22,1,5);">수시정시진단</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(22,1,6);">학생부교과분석</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_4">
+                                    <p>합격가능성</p>
+                                    <ul>
+                                        
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(22,2,1);">대학검색</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(22,2,2);">수시추천대학</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(22,2,3);">대학저장소</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_5">
+                                    <p>학생부종합</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(22,3);">추천활동</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(22,4,1);">합격자의 썰</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(22,4,2);">합격자의 학생부</a></li>
+                                        <li class="MenuDepth3 m3_4"><a href="javascript:void(0)" onclick="link(3,5,1);">자소서 월드</a></li>
+                                        <li class="MenuDepth3 m3_5"><a href="javascript:void(0)" onclick="link(22,5);">학종 LIVE</a></li>
+                                    </ul>
+                                </li>						
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="MenuDepth1 m1_5"><a href="javascript:void(0)">정시정보</a>
+                        <div class="submenu">
+                            
+                            <!-- 좌측 배너 -->
+                            <div class="menu_banner_l">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Left"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Left?ads_no=16414&amp;cmp_no=4149&amp;img_no=13683" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/dongguk200327_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 좌측 배너 -->
+        
+                            <!-- 중간 배너 -->
+                            <div class="menu_banner_c">
+                                <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Bottom"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Bottom?ads_no=17222&amp;cmp_no=4168&amp;img_no=14383" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/kookmin210114_344x65.jpg" width="344" height="65" border="0"></a>
+                            </div>
+                            <!-- // 중간 배너 -->
+        
+                            <!-- 우측 배너 -->
+                            <div class="menu_banner_r">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Right"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Right?ads_no=16466&amp;cmp_no=4188&amp;img_no=13723" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/shinhan200428_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 우측 배너 -->
+        
+                            <ul class="lnb">
+                                <li class="MenuDepth2 m2_1">
+                                    <p>만만한 입시</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(5,10,1);">고1</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(5,10,2);">고2</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(5,10,3);">입시전략</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_2">
+                                    <p>학평성적입력</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(5,2,1);">출신고교</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(22,1,4);">학력평가</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_3">
+                                    <p>성적분석</p>
+                                    <ul>
+                                        
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(23,1,5);">수시정시진단</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(23,1,6);">수능학평분석</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_4">
+                                    <p>합격가능성</p>
+                                    <ul>
+                                        
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(23,2,1);">대학검색</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(23,2,2);">정시추천대학</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(23,2,3);">대학저장소</a></li>
+                                    </ul>
+                                </li>						
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="MenuDepth1 m1_2"><a href="javascript:void(0)">대학학과</a>
+                        <div class="submenu">
+                            
+                            <!-- 좌측 배너 -->
+                            <div class="menu_banner_l">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Left"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Left?ads_no=16414&amp;cmp_no=4149&amp;img_no=13683" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/dongguk200327_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 좌측 배너 -->
+        
+                            <!-- 중간 배너 -->
+                            <div class="menu_banner_c">
+                                <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Bottom"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Bottom?ads_no=17222&amp;cmp_no=4168&amp;img_no=14383" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/kookmin210114_344x65.jpg" width="344" height="65" border="0"></a>
+                            </div>
+                            <!-- // 중간 배너 -->
+        
+                            <!-- 우측 배너 -->
+                            <div class="menu_banner_r">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Right"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Right?ads_no=16466&amp;cmp_no=4188&amp;img_no=13723" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/shinhan200428_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 우측 배너 -->
+        
+                            <ul class="lnb">
+                                <li class="MenuDepth2 m2_1">
+                                    <p>테마대학</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(2,1,1);">대학 카드뉴스</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(2,1,2);">학과 카드뉴스</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(2,1,3);">요강.입결 테마검색</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_2">
+                                    <p>대학정보</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(2,2,1)">전체보기</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(2,2,2)">지도로 찾기</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(2,2,3)">설립연도순 보기</a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li class="MenuDepth2 m2_4">
+                                    <p>대학평판비교</p>
+                                    <ul>
+                                        
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(2,4,2)">대학평판비교</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_5">
+                                    <p>학과정보</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(2,5,1)">학과전체보기</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(2,5,2)">학과정보</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(2,5,5)">골라줘!선택과목</a></li>
+                                        <li class="MenuDepth3 m3_4"><a href="javascript:void(0)" onclick="link(2,5,3)">설치대학</a></li>
+                                        
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="MenuDepth1 m1_22"><a href="javascript:void(0)">진로학습검사</a>
+                        <div class="submenu">
+                            
+                            <!-- 좌측 배너 -->
+                            <div class="menu_banner_l">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Left"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Left?ads_no=16414&amp;cmp_no=4149&amp;img_no=13683" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/dongguk200327_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 좌측 배너 -->
+        
+                            <!-- 중간 배너 -->
+                            <div class="menu_banner_c">
+                                <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Bottom"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Bottom?ads_no=17222&amp;cmp_no=4168&amp;img_no=14383" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/kookmin210114_344x65.jpg" width="344" height="65" border="0"></a>
+                            </div>
+                            <!-- // 중간 배너 -->
+        
+                            <!-- 우측 배너 -->
+                            <div class="menu_banner_r">
+                                <div class="inner">
+                                    <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Right"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Right?ads_no=16466&amp;cmp_no=4188&amp;img_no=13723" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/shinhan200428_98x134.jpg" width="98" height="134" border="0"></a>
+                                </div>
+                            </div>
+                            <!-- // 우측 배너 -->
+        
+                            <ul class="lnb">
+                                <li class="MenuDepth2 m2_1">
+                                    <p>진로진학예측검사</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(16,2,1,1);">특징 및 소개</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(16,2,3);">온라인 검사</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(16,2,3,5);">결과 리포트</a></li>
+                                        <li class="MenuDepth3 m3_4"><a href="javascript:void(0)" onclick="link(16,2,3,1);">결제 안내</a></li>
+                                    </ul>
+                                </li>
+                                <li class="MenuDepth2 m2_2">
+                                    <p>학습동기진단검사</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(16,2,6,1);">특징 및 소개</a></li>
+                                        <li class="MenuDepth3 m3_2"><a href="javascript:void(0)" onclick="link(16,2,6,3);">온라인 검사</a></li>
+                                        <li class="MenuDepth3 m3_3"><a href="javascript:void(0)" onclick="link(16,2,6,4);">결과 리포트</a></li>
+                                        <li class="MenuDepth3 m3_4"><a href="javascript:void(0)" onclick="link(16,2,6,5);">결제 안내</a></li>
+                                    </ul>
+                                </li>			
+                                <li class="MenuDepth2 m2_3">
+                                    <p>진학진단전문가과정</p>
+                                    <ul>
+                                        <li class="MenuDepth3 m3_1"><a href="javascript:void(0)" onclick="link(16,3,1);">진학진단전문가과정</a></li>
+                                    </ul>
+                                </li>				
+                            </ul>
+                        </div>
+                    </li>			
+                    
+                    <li class="MenuDepth1 m1_12"><a href="javascript:void(0)" onclick="link(12);">진학TV</a></li>
+                    
+                    
+                </ul>
+                <!-- // menu (왼쪽 그룹) -->
+        
+                <!-- menu (오른쪽 그룹) -->
+                <div class="menu2_wrap">
+                    <ul class="menu2">
+                        
+                        <li class="MenuDepth1 m1_28"><a href="javascript:void(0)">구독컨설팅</a></li>		
+                        
+                        <li class="MenuDepth1 m1_15"><a href="javascript:void(0)">인강리뷰</a></li>				
+                        <li class="MenuDepth1 m1_4"><a href="javascript:void(0)">블랙라벨</a></li>
+                        <li class="MenuDepth1 m1_14"><a href="javascript:void(0)">북이북서점</a></li>
+                        
+                    </ul>
+                    <div class="submenu">
+                        <ul class="lnb">
+                            
+                            <li class="MenuDepth1 m1_28">
+                                <p>구독컨설팅</p>
+                                <ul>
+                                    <li class="MenuDepth2 m2_1"><a href="javascript:void(0)" onclick="link(28,1);">서비스 소개</a></li>
+                                    <li class="MenuDepth2 m2_2"><a href="javascript:void(0)" onclick="link(28,2);">결제안내</a></li>
+                                    <li class="MenuDepth2 m2_3"><a href="javascript:void(0)" onclick="link(28,3);">My구독</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="MenuDepth1 m1_15">
+                                <p>인강리뷰</p>
+                                <ul>
+                                    <li class="MenuDepth2 m2_1"><a href="javascript:void(0)" onclick="link(24,1);">인강리뷰 검색</a></li>
+                                    <li class="MenuDepth2 m2_2"><a href="javascript:void(0)" onclick="link(24,2,1);">강사평판비교</a></li>
+                                    <li class="MenuDepth2 m2_3"><a href="javascript:void(0)" onclick="link(24,2,2);">인강 카드뉴스</a></li>
+                                    <li class="MenuDepth2 m2_4"><a href="javascript:void(0)" onclick="link(24,3);">강사배틀</a></li>
+                                    <li class="MenuDepth2 m2_5"><a href="javascript:void(0)" onclick="link(24,4);">맞춤인강</a></li>
+                                </ul>
+                            </li>
+                            <li class="MenuDepth1 m1_4">
+                                <p>블랙라벨</p>
+                                <ul>
+                                    <li class="MenuDepth2 m2_1"><a href="javascript:void(0)" onclick="link(4,1);">도서안내</a></li>
+                                    <li class="MenuDepth2 m2_2"><a href="javascript:void(0)" onclick="link(4,2);">도서자료실</a></li>
+                                    <li class="MenuDepth2 m2_7"><a href="javascript:void(0)" onclick="link(4,3);">선생님자료실</a></li>
+                                </ul>
+                            </li>
+                            <li class="MenuDepth1 m1_14">
+                                <p><a href="javascript:void(0)" onclick="link(14);">북이북서점</a></p>
+                                <ul>
+                                    <li class="MenuDepth2 m2_1"><a href="javascript:void(0)" onclick="link(14,1);">eBOOK</a></li>
+                                    <li class="MenuDepth2 m2_2"><a href="javascript:void(0)" onclick="link(14,2);">BOOK</a></li>
+                                    <li class="MenuDepth2 m2_12"><a href="javascript:void(0)" onclick="link(14,12);">자유이용권</a></li>
+                                    <li class="MenuDepth2 m2_14"><a href="javascript:void(0)" onclick="link(14,14);">북카트</a></li>
+                                    <li class="MenuDepth2 m2_15"><a href="javascript:void(0)" onclick="link(14,15);">마이북</a></li>
+                                    <li class="MenuDepth2 m2_6"><a href="javascript:void(0)" onclick="link(14,6);">이용안내</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                        <div class="evt"><script type="text/javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Left_B"></script></div>
+                    </div>
+                </div>
+                <!-- // menu (오른쪽 그룹) -->
+        
+        
+                <!-- e: 메뉴 Top -->
+        
+                <!-- s: 검색 -->
+                
+        
+        <!-- search -->
+        <form id="FormSearch" method="post" name="FormSearch">
+            <div class="btn_search">
+                <button type="button" class="btn_ico"><span>검색 열기</span></button>
+                <div class="search">
+                    <div class="core">
+                        <div class="sch_align">
+                            <div class="search_banner">
+                                <script src="//ad2.jinhak.com/js.kti/19jinhakmain/GNB@Search"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/GNB@Search?ads_no=16379&amp;cmp_no=4157&amp;img_no=13649" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/gnb/shinhan200226_170x49.png" width="170" height="49" border="0"></a>
+                            </div>
+                            <fieldset>
+                                <legend>전체 검색</legend>
+                                <input type="text" value="" name="SearchKey" class="input_com2" onkeypress="javascript:SearchKeyDown();" onmousedown="javascript:document.FormSearch.SearchKey.value='';">
+                                <a href="javascript:void(0)" onclick="TotalSearch();" class="btn_com8 bg1">검색</a>
+                            </fieldset>
+                        </div>
+                        <button type="button" class="close"><span>닫기</span></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- // search -->
+        
+        <script type="text/javascript" id="clientEventHandlersJS">
+            function SearchKeyDown() {
+                if (event.keyCode == 13) {
+                    event.preventDefault();
+                    TotalSearch();
+                }
+            }
+        
+            // 원서접수 사이트에서는 원서접수가 디폴트, 아니면 Total 디폴트
+            var SearchType = 'Total'; // Total, Apply, Book
+        
+            function TotalSearch() {
+                var Gubun = '2';
+                var Num = '';
+                var Title = '';
+                var URL = '';
+                var Target = '';
+        
+                // 랜덤 값과 같으면 ...
+                if (document.FormSearch.SearchKey.value == Title) {
+                    if (URL != '') {
+                        GNBLink(Gubun, Num, URL, Target);
+                    }
+                }
+                else {
+                    if (document.FormSearch.SearchKey.value == '') {
+                        alert('검색어를 입력하세요.');
+                        document.FormSearch.SearchKey.focus();
+                        return;
+                    }
+        
+                    // '상품검색' 경우 블박검색으로 이동
+                    if (SearchType == 'Book') {
+                        window.location.href = "http://JStore.jinhak.com/Product/SearchResult.aspx?CategoryCode=0&KeyWord=" + document.FormSearch.SearchKey.value; return;
+                    }
+        
+                    var encoding = document.charset;//encodeURIComponent
+                    if (encoding.indexOf("utf") > -1 || encoding.indexOf("UTF") > -1) {
+                        document.charset = 'euc-kr';	//Post방식
+                        FormSearch.acceptCharset = 'euc-kr';
+                        FormSearch.method = "get";
+                        FormSearch.action = "https://www.jinhak.com/Search/SearchResult.aspx";
+                        FormSearch.submit();
+                    }
+                    else
+                        window.location.href = "https://www.jinhak.com/Search/SearchResult.aspx?SearchKey=" + document.FormSearch.SearchKey.value;
+                }
+            }
+        </script>
+        
+                <!-- e: 검색 -->
+            </div>
+        </div>
+        <hr>
+        <div class="modal_wrap_2014" id="layerNoMember" style="display:none;">
+            <div class="modal_alpha"></div>
+            <div class="layer_popup wd746" id="nomember">
+            
+                <div class="core">
+                    <p class="tit mt15"><img src="https://imgorg.jinhak.com/renewal2009/virtualapply/layer_tit_event.png" class="png24" alt="모평 및 내신성적을 입력하시면, 수시 지원과 정시지원 적합성 분석결과를 확인할 수 있습니다."></p>
+                    <p class="btn">
+                        <a href="javascript:GoMemJoinUrl();"><img src="https://imgorg.jinhak.com/renewal2009/virtualapply/layer_btn_event.png" alt="회원가입"></a>
+                        <a href="https://www.jinhak.com"><img src="https://imgorg.jinhak.com/renewal2009/virtualapply/layer_btn_home.png" alt="진학닷컴 홈으로 가기" class="ml3"></a>
+    
+                    </p>
+                    <p class="event_mt23"><img src="https://imgorg.jinhak.com/renewal2009/virtualapply/layer_event.png" alt="close"></p>
+                    <p class="layerclose"><a href="javascript:void(0);" onclick="closelayerNoMember();" title="레이어 닫기"><img src="https://imgorg.jinhak.com/renewal2009/virtualapply/layer_close.png" alt="close"></a></p>
+                </div>
+            </div>
+        </div>
+        <div id="main_Slider">
+            <div class="main_visual slick-initialized slick-slider"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
+                <div aria-live="polite" class="slick-list draggable" style="height: 335px;"><div class="slick-track" role="listbox" style="opacity: 1; width: 4640px;"><div class="slick-slide slick-current slick-active" style="background-color: rgb(213, 243, 214); width: 1160px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00">   <div>       <span style="position: absolute; top: 0; left: 0; bottom: 0; display: block; font-size: 40px; color: #000; font-weight: 600;"></span>       <script language="javascript" src="//ad2.jinhak.com/js.kti/M_jinhakmain/20main@A_C_01?ads_no=17301&amp;cmp_no=4415&amp;img_no=14461"></script><a href="http://ad2.jinhak.com/click.kti/M_jinhakmain/20main@A_C_01?ads_no=17301&amp;cmp_no=4415&amp;img_no=14461" target="_self" tabindex="0"><img src="https://imgorg.jinhak.com/jinhakhome/center/mo0325_565_334_2.png" width="565" height="334" border="0"></a>   </div></div><div class="slick-slide" style="background-color: rgb(249, 238, 213); width: 1160px; position: relative; left: -1160px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01">   <div>       <span style="position: absolute; top: 0; left: 0; bottom: 0; display: block; font-size: 40px; color: #000; font-weight: 600;"></span>       <script language="javascript" src="//ad2.jinhak.com/js.kti/M_jinhakmain/20main@A_C_01?ads_no=17307&amp;cmp_no=4416&amp;img_no=14467"></script><a href="http://ad2.jinhak.com/click.kti/M_jinhakmain/20main@A_C_01?ads_no=17307&amp;cmp_no=4416&amp;img_no=14467" target="_self" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/exsusi0325_565_334_2.png" width="565" height="334" border="0"></a>   </div></div><div class="slick-slide" style="background-color: rgb(205, 220, 244); width: 1160px; position: relative; left: -2320px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02">   <div>       <span style="position: absolute; top: 0; left: 0; bottom: 0; display: block; font-size: 40px; color: #000; font-weight: 600;"></span>       <script language="javascript" src="//ad2.jinhak.com/js.kti/M_jinhakmain/20main@A_C_01?ads_no=17311&amp;cmp_no=4417&amp;img_no=14471"></script><a href="http://ad2.jinhak.com/click.kti/M_jinhakmain/20main@A_C_01?ads_no=17311&amp;cmp_no=4417&amp;img_no=14471" target="_self" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/bnb0325_565_334.png" width="565" height="334" border="0"></a>   </div></div><div class="slick-slide" style="background-color: rgb(220, 220, 247); width: 1160px; position: relative; left: -3480px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms ease 0s;" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03">   <div>       <span style="position: absolute; top: 0; left: 0; bottom: 0; display: block; font-size: 40px; color: #000; font-weight: 600;"></span>       <script language="javascript" src="//ad2.jinhak.com/js.kti/M_jinhakmain/20main@A_C_01?ads_no=17296&amp;cmp_no=4414&amp;img_no=14455"></script><a href="http://ad2.jinhak.com/click.kti/M_jinhakmain/20main@A_C_01?ads_no=17296&amp;cmp_no=4414&amp;img_no=14455" target="_self" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/ingang210318_565_334.png" width="565" height="334" border="0"></a>   </div></div></div></div>
+            <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button><div class="dots-box" style="display: block;" role="tablist"><div class="in_dots" role="toolbar"><ul class="slick-dots"><li class="slick-active" aria-hidden="false" role="presentation" aria-selected="true" aria-controls="navigation00" id="slick-slide00"><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">1</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation01" id="slick-slide01" class=""><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">2</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation02" id="slick-slide02" class=""><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">3</button></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation03" id="slick-slide03" class=""><button type="button" data-role="none" role="button" aria-required="false" tabindex="0">4</button></li></ul><div class="controls"><button class="pause">Pause</button><button class="play">Play</button></div></div></div></div>
+
+            <div class="sub_visual slick-initialized slick-slider"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
+                <div aria-live="polite" class="slick-list draggable" style="height: 334px;"><div class="slick-track" style="opacity: 1; width: 5085px; left: -3390px;" role="listbox"><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-ALL01"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-ALL01?ads_no=16597&amp;cmp_no=4173&amp;img_no=13814" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/gachon200226_565x334_2.png" width="565" height="334" border="0"></a></div><div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide10" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-SK02"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-SK02?ads_no=16953&amp;cmp_no=4284&amp;img_no=14141" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/hknu200908_565x334.png" width="565" height="334" border="0"></a></div><div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide11" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-SK01"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-SK01?ads_no=16769&amp;cmp_no=4224&amp;img_no=13984" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/kangwon200728_565x334.png" width="565" height="334" border="0"></a></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide12" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-ALL02"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-ALL02?ads_no=16598&amp;cmp_no=4163&amp;img_no=13815" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/kyonggi200226_565x334_4.png" width="565" height="334" border="0"></a></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide13" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-ALL05"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-ALL05?ads_no=17178&amp;cmp_no=4355&amp;img_no=14341" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/hs201224_565x334r.png" width="565" height="334" border="0"></a></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide14" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-ALL04"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-ALL04?ads_no=16600&amp;cmp_no=4167&amp;img_no=13817" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/dankook200226_565x334_4.png" width="565" height="334" border="0"></a></div><div class="slick-slide slick-current slick-active" data-slick-index="5" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide15" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-ALL03"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-ALL03?ads_no=16599&amp;cmp_no=4172&amp;img_no=13816" target="_blank" tabindex="0"><img src="https://imgorg.jinhak.com/jinhakhome/center/syu200226_565x334.png" width="565" height="334" border="0"></a></div><div class="slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide16" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-ALL01"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-ALL01?ads_no=16597&amp;cmp_no=4173&amp;img_no=13814" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/gachon200226_565x334_2.png" width="565" height="334" border="0"></a></div><div class="slick-slide slick-cloned" data-slick-index="7" aria-hidden="true" tabindex="-1" style="width: 565px;"><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterA-SK02"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterA-SK02?ads_no=16953&amp;cmp_no=4284&amp;img_no=14141" target="_blank" tabindex="-1"><img src="https://imgorg.jinhak.com/jinhakhome/center/hknu200908_565x334.png" width="565" height="334" border="0"></a></div></div></div>
+            <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button><div class="dots-box" style="display: block;" role="tablist"><div class="in_dots" role="toolbar"><ul class="customPaging"><li class="" aria-hidden="true" role="presentation" aria-selected="true" aria-controls="navigation10" id="slick-slide10">1<span> / 7</span></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation11" id="slick-slide11" class="">2<span> / 7</span></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation12" id="slick-slide12" class="">3<span> / 7</span></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation13" id="slick-slide13" class="">4<span> / 7</span></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation14" id="slick-slide14" class="">5<span> / 7</span></li><li aria-hidden="false" role="presentation" aria-selected="false" aria-controls="navigation15" id="slick-slide15" class="slick-active">6<span> / 7</span></li><li aria-hidden="true" role="presentation" aria-selected="false" aria-controls="navigation16" id="slick-slide16" class="">7<span> / 7</span></li></ul><div class="controls"><button class="pause">Pause</button><button class="play">Play</button></div></div></div></div>
+        </div>
+        <script src="/JinhakCommon/Inc/Js/mainSlider.js"></script>
+        <div class="container at_main" id="contents">
+
+            <!-- main group -->
+            <div class="contents">
+                <!-- top banners -->
+                
+
+<div class="section sec_top">
+    <div class="fast_navi">
+        <ul class="navi">
+            <li>
+    <a href="https://hijinhak.jinhak.com/Hakjong/MyInfo/ViewSAT.aspx?TopFlag=H" target="_blank">
+        <span class="obj">
+            <img src="http://board.jinhak.com/BoardV1/Upload/JinhakMain/QuickMenu/mid_icon_7(2).png" alt="3월 학평 성적 입력"></span>
+        <span>3월 학평 성적 입력</span>
+    </a>
+</li>
+<li>
+    <a href="http://www.jinhak.com/Ipsi/PR_Go2.aspx?TopFlag=S" target="_self">
+        <span class="obj">
+            <img src="https://imgorg.jinhak.com/renewal2020/main/low_icon_1.png" alt="입시콕!체크"></span>
+        <span>입시콕!체크</span>
+    </a>
+</li>
+<li>
+    <a href="http://hijinhak.jinhak.com/Hakjong/PassTalk/PassTalkMain.aspx" target="_self">
+        <span class="obj">
+            <img src="https://imgorg.jinhak.com/renewal2020/main/low_icon_2.png" alt="합격자썰"></span>
+        <span>합격자썰</span>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/UnivInfo/UnivLibrary/ProblemsList.aspx?Gubun=L&amp;Grade=1&amp;Year=2022&amp;Term=03&amp;Subject=" target="_self">
+        <span class="obj">
+            <img src="http://board.jinhak.com/BoardV1/Upload/JinhakMain/QuickMenu/high_icon_7(2)(1).png" alt="모평 문제 및 정답"></span>
+        <span>모평 문제 및 정답</span>
+    </a>
+</li>
+<li>
+    <a href="http://hijinhak.jinhak.com/MajorInfo/NesinSubject/ThisSubject.aspx" target="_self">
+        <span class="obj">
+            <img src="https://imgorg.jinhak.com/renewal2020/main/low_icon_4.png" alt="골라줘 선택과목"></span>
+        <span>골라줘 선택과목</span>
+    </a>
+</li>
+<li>
+    <a href="http://www.jinhak.com/Ipsi/PR_Go1.aspx?TopFlag=S" target="_self">
+        <span class="obj">
+            <img src="http://board.jinhak.com/BoardV1/Upload/JinhakMain/QuickMenu/low_icon_7.png" alt="만만한 입시"></span>
+        <span>만만한 입시</span>
+    </a>
+</li>
+
+        </ul>
+    </div>
+</div>
+
+                <!-- // top banners -->
+
+                <!-- middle contents -->
+                <div class="section sec_mid">
+
+                    <!-- 중간 > center -->
+                    
+<div class="mid_center">
+    <script type="text/javascript" src="/Inc/Js/jquery.sliderTabs.min.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).on('ready', function () {
+            
+            var slider_1 = $("#SliderTabs_1");
+
+            slider_1.sliderTabs({
+                defaultTab: 2,
+                tabHeight: 20,
+                mousewheel: false,
+                panelArrows: true,
+                transitionSpeed: 0,
+                tabArrows: false                
+            });
+            
+        });
+        //]]>
+    </script>
+    <div class="cont_slider full  ui-slider-tabs" id="SliderTabs_1">
+        
+
+
+
+
+    <div class="ui-slider-tabs-list-wrapper"><div class="ui-slider-tabs-list-container" style="margin: 0px;"><ul class="pager ui-slider-tabs-list" style="margin-left: 0px; width: 156px;">
+    
+    
+<li style="height: 22px;"><a href="#cont1" style="height: 22px;">뜨는영상</a></li><li class="selected" style="height: 22px;"><a href="#cont2" style="height: 22px;">입시꿀팁</a></li></ul><a href="#" class="ui-slider-left-arrow edge" style="width: 35px; height: 22px; display: none;"><div></div></a><a href="#" class="ui-slider-right-arrow" style="width: 35px; height: 22px; display: none;"><div></div></a></div></div><div class="ui-slider-tabs-content-container" style="height: 420px;"><div id="cont1" class="cont ui-slider-tab-content" style="left: -1160px; display: none; width: 1160px;">
+   <div class="">
+     <div class="list_thume_box thume217">
+            <div class="top">
+                <a href="http://jinhaktv.jinhak.com/Detail/682V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/3nb2c3R9HD8/mqdefault.jpg" alt=""><span class="time">03:48</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">나라에서 억! 단위로 지원해 주는 대학 TOP9 | BK21 선정 대학, 국가지원, 비전, 우수 평가 대학</p>
+                        <p class="tag"><span>#입시</span><span>#BK21 선정대학</span><span>#서울대</span><span>#성균관대</span><span>#고려대</span><span>#연세대</span><span>#한양대</span><span>#카이스트</span><span>#중앙대</span><span>#랭킹쇼</span></p>
+                        <div class="etc">
+                        <p class="hit">103</p>
+                        <p class="date">6시간전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/680V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/zQPXZhOwWLQ/mqdefault.jpg" alt=""><span class="time">07:27</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">학종의 핵심! 대입성공 세특관리!ㅣ입시,세특,학생부</p>
+                        <p class="tag"><span>#입시</span><span>#입시정보</span><span>#세특</span><span>#대학</span><span>#학종</span><span>#학생부</span><span>#수업</span><span>#입학사정관</span><span>#과목</span><span>#토론</span></p>
+                        <div class="etc">
+                        <p class="hit">375</p>
+                        <p class="date">2일전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/679V" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/Upload/JinhakVideo/선택과목-썸네일(640).jpg" alt=""><span class="time">07:54</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">선택과목에 따른 수능 유불리!! 정답을 알려줘~!! | 입시, 선택과목, 수능</p>
+                        <p class="tag"><span>#선택과목</span><span>#유불리</span><span>#수능</span><span>#국어</span><span>#수학</span><span>#대학</span></p>
+                        <div class="etc">
+                        <p class="hit">576</p>
+                        <p class="date">3일전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/678V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/toffPU2AaK8/mqdefault.jpg" alt=""><span class="time">04:53</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">경찰이 되려면 어떻게 해야 하나요? | 경찰관, 학과, 입시,진학, 고등학생</p>
+                        <p class="tag"><span>#입시</span><span>#경찰</span><span>#경찰관</span><span>#형사</span><span>#순경</span><span>#고등학생</span><span>#희망직업</span><span>#동국대</span><span>#경찰행정학과</span><span>#경찰대</span></p>
+                        <div class="etc">
+                        <p class="hit">268</p>
+                        <p class="date">4일전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/677V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/QGwuSzgcVeY/mqdefault.jpg" alt=""><span class="time">03:40</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">남녀성비 망한대학 TOP5 ㅣ입시, 성비, 대학</p>
+                        <p class="tag"><span>#입시</span><span>#CC</span><span>#대학</span><span>#성비</span><span>#망한대학</span><span>#Top5</span><span>#남학생</span><span>#비율</span><span>#교대</span><span>#랭킹쑈</span></p>
+                        <div class="etc">
+                        <p class="hit">956</p>
+                        <p class="date">7일전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/676V" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/Upload/JinhakVideo/썸네일_봉사활동 논란640.jpg" alt=""><span class="time">08:10</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">봉사활동 논란타파! 그래서 해 말아?ㅣ입시, 고1, 봉사</p>
+                        <p class="tag"><span>#입시</span><span>#입시정보</span><span>#봉사</span><span>#봉사활동</span><span>#동아리</span><span>#고1</span><span>#대학</span><span>#자소서</span><span>#학생부</span></p>
+                        <div class="etc">
+                        <p class="hit">708</p>
+                        <p class="date">1주전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/674V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/5phpPdDXNyE/mqdefault.jpg" alt=""><span class="time">04:41</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">저작권이 뭔데! 궁금하지 않아? | 학과, 지식재산권, 유튜버, 입시, 고등학교</p>
+                        <p class="tag"><span>#입시</span><span>#저작권</span><span>#지식재산권</span><span>#특허권</span><span>#실용신안권</span><span>#디자인권</span><span>#상표권</span><span>#사ㅏㄴ업재산권</span><span>#신지식재산권</span><span>#변리사</span></p>
+                        <div class="etc">
+                        <p class="hit">153</p>
+                        <p class="date">1주전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/672V" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/Upload/JinhakVideo/썸네일_창업 640.jpg" alt=""><span class="time">03:48</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">창업 팍팍 밀어주는 대학 TOP5ㅣ입시, 창업, 대학</p>
+                        <p class="tag"><span>#입시</span><span>#랭킹쇼</span><span>#창업</span><span>#CEO</span><span>#숭실대</span><span>#고려대</span><span>#광운대</span><span>#건국대</span><span>#카이스트</span><span>#대학교</span></p>
+                        <div class="etc">
+                        <p class="hit">557</p>
+                        <p class="date">1주전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/671V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/Ugkc1tXpO-8/mqdefault.jpg" alt=""><span class="time">06:48</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">수행평가 만점 받는 법ㅣ입시, 학생부, 고등학생</p>
+                        <p class="tag"><span>#입시</span><span>#입시정보</span><span>#고1</span><span>#고2</span><span>#고3</span><span>#수행평가</span><span>#학생부</span><span>#중간고사</span><span>#기말고사</span><span>#대학생</span></p>
+                        <div class="etc">
+                        <p class="hit">420</p>
+                        <p class="date">2주전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/670V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/UlnIt0KGMmE/mqdefault.jpg" alt=""><span class="time">05:34</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">앞으로 여기 뜬다! 드론학과 들어봤어?</p>
+                        <p class="tag"><span>#입시</span><span>#측량</span><span>#항공</span><span>#공항</span><span>#비행</span><span>#드론</span><span>#드론학과</span><span>#유망</span><span>#4차산업시대</span><span>#핵심분야</span></p>
+                        <div class="etc">
+                        <p class="hit">431</p>
+                        <p class="date">2주전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/669V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/hDCTFmGf8rs/mqdefault.jpg" alt=""><span class="time">03:56</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">학점 짜게 주는 대학 TOP5 | 학점, 대학교, 입시</p>
+                        <p class="tag"><span>#입시</span><span>#학점</span><span>#대학</span><span>#Top5</span><span>#면접</span><span>#질문</span><span>#면접관</span><span>#모범답안</span><span>#학교</span><span>#랭킹쇼</span></p>
+                        <div class="etc">
+                        <p class="hit">956</p>
+                        <p class="date">3주전</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="http://jinhaktv.jinhak.com/Detail/668V" class="thume">
+                    <div class="pic"><img src="https://img.youtube.com/vi/kAC1exGAoVg/mqdefault.jpg" alt=""><span class="time">05:36</span></div>
+                    <div class="txt">
+                        <p class="subj" style="">남학생은 교대가기 더 어려워진다? ㅣ성비제한 규정</p>
+                        <p class="tag"><span>#입시</span><span>#남학생</span><span>#좁은문</span><span>#교대</span><span>#어려움</span><span>#성비</span><span>#제한</span><span>#규정</span><span>#움직임</span><span>#입시정보</span></p>
+                        <div class="etc">
+                        <p class="hit">1,180</p>
+                        <p class="date">3주전</p>
+                        </div>
+                    </div>
+                </a>
+         </div>
+     </div>
+   </div>
+</div><div id="cont2" class="cont ui-slider-tab-content selected" style="left: 0px; position: static; display: block; width: 1160px;">
+   <div class="">
+     <div class="list_thume_box thume175">
+            <div class="top">
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823224&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/AKR20210408096500053_01_i_P4.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">동국대 경주캠퍼스 명칭 변경 추진…"미래 지향 이미지 구축"</p>
+                        <p class="tag"><span>#동국대</span><span>#경주캠퍼스</span><span>#캠퍼스</span><span>#명칭</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823223&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/20210407_news1_272M.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">전남대 2023학년도 의학 계열 지역인재 선발비율 62%</p>
+                        <p class="tag"><span>#의치한</span><span>#전남대학교</span><span>#지역인재</span><span>#선발모집</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823221&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210402_cardnews.png" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">[카드뉴스] 고1, 봉사활동 해야할까?</p>
+                        <p class="tag"><span>#봉사활동</span><span>#2024학년도</span><span>#학생부관리</span><span>#세특관리</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823217&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/20210402_272M.png" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">고1, 당신의 문해력은 어떤가요?</p>
+                        <p class="tag"><span>#수능대비</span><span>#독서</span><span>#고12</span><span>#학습법</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823216&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210401_272M.png" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">고1을 위한 학생부 관리 방법 알아보기</p>
+                        <p class="tag"><span>#학생부관리</span><span>#2024학년도</span><span>#세특관리</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823209&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210324_272M.png" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">2024 대입, 봉사실적이 미반영 된다?!</p>
+                        <p class="tag"><span>#봉사활동</span><span>#2024학년도</span><span>#학생부관리</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823208&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210323_news1_272M.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">올해 첫 고교 전국연합학력평가 23∼25일…학년별 분산 시행</p>
+                        <p class="tag"><span>#3월학평</span><span>#수능모의평가</span><span>#2022학년도</span><span>#선택형수능</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823198&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/MicrosoftTeams-image (1).png" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">학습동기를 올려주는 주도적인 입시 정보 찾기</p>
+                        <p class="tag"><span>#모집요강</span><span>#입시정보</span><span>#대입전형계획</span><span>#진로진학</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823195&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210309_news4_272M.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">코로나 학력 격차…소득계층별 사교육비 5배 차이</p>
+                        <p class="tag"><span>#사교육비</span><span>#소득계층별</span><span>#지출현황</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823194&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210309_news3_272M.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">교육부 "사교육 유발 억제..등교 수업 확대 할 것"</p>
+                        <p class="tag"><span>#교육부</span><span>#사교육비 억제</span><span>#교육격차</span><span>#등교확대</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823192&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/210309_news1_272M.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">기초학력 미달 학생 늘어날까…고1 이달 진단평가</p>
+                        <p class="tag"><span>#기초학력진단</span><span>#고1</span><span>#교육부</span></p>
+                    </div>
+                </a>
+                <a href="https://www.jinhak.com/IpsiStrategy/NewsDetail.aspx?ContentID=823191&amp;Sigi=J" class="thume">
+                    <div class="pic"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/세특관리.jpg" alt=""></div>
+                    <div class="txt">
+                        <p class="subj" style="">[카드뉴스] 고2, 세특관리는 이렇게 하자!</p>
+                        <p class="tag"><span>#세특관리</span><span>#학생부</span><span>#2015 개정교육과정</span></p>
+                    </div>
+                </a>
+         </div>
+     </div>
+   </div>
+</div><div class="ui-slider-tabs-leftPanelArrow" style="top: 96px;"></div><div class="ui-slider-tabs-rightPanelArrow" style="top: 96px;"></div></div></div>
+        
+    
+</div>
+<!-- // mid_center -->
+
+                    <!-- // 중간 > center -->
+
+                    <div class="mid_AD_Box">                       
+                        <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterB-SK02"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterB-SK02?ads_no=16627&amp;cmp_no=4235&amp;img_no=13843" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/bau200612_1158x72.jpg" width="1158" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/center/bau200612_1158x144.jpg';this.height='144'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/center/bau200612_1158x72.jpg';this.height='72'"></a>
+                    </div>
+
+                    <div class="mid_cont_Box">
+                        
+
+
+<!-- 인강리뷰 -->
+<div class="contBox">
+    <p class="title">인강리뷰</p>
+
+    <div class="list_thume_box atStyle">
+        <div>
+    <a href="javascript:void(0);" onclick="goLectureReviewDetail(1,823218)" class="thume ">
+        <div class="pic">
+            <img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/무비국어.jpg" alt="">
+        </div>
+        <div class="txt">
+            <div>
+                <p class="subj">들어봐~ 선경쌤은 처음이지? [강사랭킹이슈] 국어 엄선경</p>
+                <p class="tag"><span>#국어</span><span>#엄선경</span><span>#강사랭킹이슈</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div>
+    <a href="javascript:void(0);" onclick="goLectureReviewDetail(1,823203)" class="thume ">
+        <div class="pic">
+            <img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/박기웅(1).jpg" alt="">
+        </div>
+        <div class="txt">
+            <div>
+                <p class="subj">기웅쌤은 처음이지? 들어봐~ [강냉이] 생명과학 박기웅</p>
+                <p class="tag"><span>#생명과학</span><span>#박기웅</span><span>#강사랭킹이슈</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+    </div>
+
+    <ul class="list_review">
+        <li>
+            <a href="javascript:void(0)" onclick="goLectureReviewDetail(2, '164')" class="core">
+                <span class="top">
+                    <span class="picture">
+                        <img src="http://board.jinhak.com/BoardV1/Upload/Ssemcha/TeacherReal/b_f_08_s.jpg" alt="강사 사진"></span>
+                    <span class="txt">
+                        <span class="name">
+                            <span>박지향</span> <span>생명과학</span>	<span class="score">7.88</span>
+                        </span>
+                        <span class="type">이해유도형, 소통형, 분석형</span>
+                    </span>
+                </span>
+
+                <span class="review">
+                    <span class="rvResult">
+                        <span class="bad">
+                            <span>선생님께서는 강의를 진행하실 때 헷갈리는 개념에 대해 오개념을 적으신 후, X표시 하고 수정해주시는 활동을 하십니다. 예를 들자면, 칠판에 재채기, 하품, 침, 배뇨의 조절중추가 연수라고 먼저 적으신 후 설명 해주실 때 배뇨에 X표시하고 '배뇨의 조절중추는 척수이니까 헷갈리지 않게 조심하세요'라고 말씀해주십니다. 그래서 미리 칠판을 보고 필기하는 경우에는 이미 해놓은 노트필기를 화이트로 수정해야하는 일이 빈번하게 발생할 수 있습니다.</span>
+                        </span>
+                        <span class="good">
+                            <span>1) 재정적 부담이 비교적 적습니다.
+ 교재 가격이 부록까지 포함한 것에 비해 저렴한 편에 속합니다. 3월, 6월 달엔 이벤트를 통해 자체 모의고사를 무료로 배포해주시기도 합니다.
+2) 체계적인 커리큘럼 구성
+첫 번째 커리큘럼인 '개념완성' 강좌를 통해 생명과학을 잘 모르는 학생들도 이해하기 쉽도록 예시를 들어서 설명해주십니다. 이 후 '킬러7'이라는 강좌를 통해 학생들이 어려워하는 킬러문제인 유전, 흥분의 전도, 근수축 계산 등을 위주로 문제를 빨리 풀 수 있는 스킬을 꼼꼼하게 단계적으로 알려주십니다. 
+3) 직후 복습 가능
+모든 강의마다 '관리력'이라는 선생님만의 부록이 있습니다. 관리력은 강의 내용을 체득할 수 있게 도와주는 일종의 과제장입니다. 강의를 들은 직후 관리력을 풀면서 개념을 익히고 선생님의 풀이법을 체득할 수 있는 시간을 가질 수 있습니다. 특히 주 단위로 할 양이 표시되어 있기 때문에 매일매일 생명과학 공부를 할 수 있도록 도와줍니다.
+4) 수능 직전 찍기 특강
+선생님께선 매년 추석 때 '찍기 특강'이라는 강의를 올려주십니다. 추석기간 동안 완강할 수 있는 적당히 짧은 강의로, 문제풀이 스킬 공부에만 몰두하느라 개념을 소홀히 한 친구들에게 수능 필수 개념을 다시 한 번 상기 할 수 있도록 도와주는 강의입니다. 수능날 가볍게 들고갈 수 있도록 핵심 개념만 정리해놓은 자료도 이 강의를 통해 배포해주십니다. 
+5) EBS 연계교재 학습가능
+박지향 선생님께선 EBS 연계교재를 매우 중요하게 생각하셔서 따로 EBS 수특 문제 풀이 강좌를 개설하셨습니다. 수특을 풀다가 막히는 문제는 이 강의를 통해 해결할 수 있으며, 본인이 푼 풀이와 선생님께서 푸신 풀이를 비교하며 공부할 수 있다는 장점이 있습니다. 또한 EBS에서 중요하게 다룬 개념은 무엇인지 짚어주시기에 연계교재 학습에 용이합니다. 
+6) 학생들과의 원활한 소통
+학생들과의 소통을 중요하게 생각하시기 때문에 선생님은 인스타그램을 통해서 매주 주말마다 라이브 방송을 진행하십니다. 라이브 방송을 통해 선생님께선 공부에 대한 조언과 위로도 해주시며 학생들과 질의응답하는 시간을 가지시기도 합니다.</span>
+                        </span>
+                    </span>
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="more_">
+        <a href="javascript:void(0);" onclick="setCookie('JinhakTarget', '1' , 30); link(24,1);"><img src="https://imgorg.jinhak.com/renewal2020/main/btn_more.gif" alt="더보기"></a>
+    </div>
+</div>
+<!-- // 인강리뷰 -->
+
+<script type="text/javascript">
+    function goLectureReviewDetail(type, code) {
+        if (type == 1) {
+            location.href = "https://www.jinhak.com/Lecture/Compare/LectureCardNewsDetail.aspx?ContentID=" + code;
+        } else {
+            location.href = "https://www.jinhak.com/Lecture/Review/MiniHome/TeacherMiniHome.aspx?TeacherCode=" + code;
+        }
+    }
+</script>
+
+
+
+<!-- 블랙라벨 신간소개 -->
+<div class="contBox">
+    <p class="title">블랙라벨 신간소개</p>
+
+    <ul class="list_book blacklabel">
+        <li><span class="thume"><img src="https://board.jinhak.com/BoardV1/JStore/BL고등 기하(web표1)(1).jpg" alt=""><span class="over_quick"><a href="//blackbox.jinhak.com/Book/Detail/461"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_view.png" title="바로 구매"></a><a href="//blackbox.jinhak.com/Book/Detail/461" target="_blank;"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_new.png" title="장바구니 추가"></a></span></span><span>블랙라벨 기하</span></li>
+<li><span class="thume"><img src="https://board.jinhak.com/BoardV1/JStore/J_B_1751.jpg" alt=""><span class="over_quick"><a href="//blackbox.jinhak.com/Book/Detail/460"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_view.png" title="바로 구매"></a><a href="//blackbox.jinhak.com/Book/Detail/460" target="_blank;"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_new.png" title="장바구니 추가"></a></span></span><span>블랙라벨 고등 영어 내신 어법(2...</span></li>
+<li><span class="thume"><img src="https://board.jinhak.com/BoardV1/JStore/J_B_1750.jpg" alt=""><span class="over_quick"><a href="//blackbox.jinhak.com/Book/Detail/459"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_view.png" title="바로 구매"></a><a href="//blackbox.jinhak.com/Book/Detail/459" target="_blank;"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_new.png" title="장바구니 추가"></a></span></span><span>더 개념 블랙라벨 고등 국어 문학...</span></li>
+<li><span class="thume"><img src="https://board.jinhak.com/BoardV1/JStore/J_B_1744.jpg" alt=""><span class="over_quick"><a href="//blackbox.jinhak.com/Book/Detail/456"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_view.png" title="바로 구매"></a><a href="//blackbox.jinhak.com/Book/Detail/456" target="_blank;"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_new.png" title="장바구니 추가"></a></span></span><span>블랙라벨 수능기출과 변형 영어 독...</span></li>
+<li><span class="thume"><img src="https://board.jinhak.com/BoardV1/JStore/J_B_1743.jpg" alt=""><span class="over_quick"><a href="//blackbox.jinhak.com/Book/Detail/455"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_view.png" title="바로 구매"></a><a href="//blackbox.jinhak.com/Book/Detail/455" target="_blank;"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_new.png" title="장바구니 추가"></a></span></span><span>블랙라벨 미적분</span></li>
+<li><span class="thume"><img src="https://board.jinhak.com/BoardV1/JStore/J_B_1742.jpg" alt=""><span class="over_quick"><a href="//blackbox.jinhak.com/Book/Detail/454"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_view.png" title="바로 구매"></a><a href="//blackbox.jinhak.com/Book/Detail/454" target="_blank;"><img src="https://imgorg.jinhak.com/renewal2019/jstore/ico_new.png" title="장바구니 추가"></a></span></span><span>더 개념 블랙라벨 수학Ⅱ</span></li>
+
+    </ul>
+
+    <div class="more_">
+        <a href="https://blackbox.jinhak.com/Book/List">
+            <img src="https://imgorg.jinhak.com/renewal2020/main/btn_more.gif" alt="더보기"></a>
+    </div>
+</div>
+<!-- // 블랙라벨 신간소개 -->
+
+
+
+
+
+<!-- 대학학과 꿀팁 -->
+<div class="contBox">
+    <p class="title">대학학과 꿀팁</p>
+
+    <div class="list_thume_box atStyle">
+        <div>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/UnivCardNewsDetail.aspx?ContentID=823225" class="thume ">
+        <div class="pic">
+            <img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/전북대.jpg" alt="">
+        </div>
+
+        <div class="txt">
+            <div>
+                <p class="subj">여기 어때? 전북대~ [선배가 들려주는 캠퍼스리뷰]</p>
+                <p class="tag"><span>#전북대</span><span>#대학평판</span><span>#지거국</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/MajorCardNewsDetail.aspx?ContentID=823219" class="thume ">
+        <div class="pic">
+            <img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/MicrosoftTeams-image (54).png" alt="">
+        </div>
+
+        <div class="txt">
+            <div>
+                <p class="subj"> 약대와 비슷해 보이지만, 다른 학과들</p>
+                <p class="tag"><span>#약학과</span><span>#제약학과</span><span>#약사면허</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/MajorCardNewsDetail.aspx?ContentID=823212" class="thume ">
+        <div class="pic">
+            <img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/MicrosoftTeams-image (53).png" alt="">
+        </div>
+
+        <div class="txt">
+            <div>
+                <p class="subj">학과는 학과일뿐! 오해하지 말자! </p>
+                <p class="tag"><span>#학과소문</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+<div>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/UnivCardNewsDetail.aspx?ContentID=823210" class="thume ">
+        <div class="pic">
+            <img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/충북대.jpg" alt="">
+        </div>
+
+        <div class="txt">
+            <div>
+                <p class="subj">충북대학교~ 여기는 어때? [선배가 말하는 캠퍼스리뷰]</p>
+                <p class="tag"><span>#충북대</span><span>#대학평판</span><span>#지거국</span></p>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+    </div>
+
+    <div class="more_">
+        <a href="javascript:void(0);" onclick="link(2,1,1)"><img src="https://imgorg.jinhak.com/renewal2020/main/btn_more.gif" alt="더보기"></a>
+    </div>
+</div>
+<!-- // 대학학과 꿀팁 -->
+
+
+
+                    </div>
+                    <!-- // mid_cont_Box -->
+
+                    <div class="mid_AD_Box list"><!-- image-size:290x55 -->
+                        <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/20main@cd01"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/20main@cd01?ads_no=16332&amp;cmp_no=4151&amp;img_no=13930" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/chungchong200626_290x55.jpg" width="290" height="55" border="0"></a>
+                        <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/20main@cd02"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/20main@cd02?ads_no=16709&amp;cmp_no=4240&amp;img_no=13909" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/Top200625_290x55.jpg" width="290" height="55" border="0"></a>
+                        <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/20main@cd03"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/20main@cd03?ads_no=16334&amp;cmp_no=4153&amp;img_no=13836" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/cd/cd_incheon_290x55-2.jpg" width="290" height="55" border="0"></a>
+                        <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/20main@cd04"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/20main@cd04?ads_no=16871&amp;cmp_no=4305&amp;img_no=14076" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/daegu200803_290x55.jpg" width="290" height="55" border="0"></a>
+                    </div>
+
+                    <div class="univ_Ad_Box"><!-- image-size:193x72 -->
+                        <div>
+						    <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterC-01"></script><a href="//ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterC-01?ads_no=16998&amp;cmp_no=4179&amp;img_no=14172" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/kumoh200915_193x72.jpg" width="193" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/center/kumoh200915_193x106.jpg';this.height='106'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/center/kumoh200915_193x72.jpg';this.height='72'"></a>
+					    </div>
+                        <div>
+						    <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterC-02"></script><a href="//ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterC-02?ads_no=16835&amp;cmp_no=4293&amp;img_no=14044" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/gch200723_193x72.jpg" width="193" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/center/gch200723_193x106.jpg';this.height='106'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/center/gch200723_193x72.jpg';this.height='72'"></a>
+					    </div>
+                        <div>
+						    <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterC-03"></script><a href="//ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterC-03?ads_no=16523&amp;cmp_no=4198&amp;img_no=13706" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/baewha200428_193x72.jpg" width="193" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/center/baewha200428_193x106.jpg';this.height='106'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/center/baewha200428_193x72.jpg';this.height='72'"></a>
+					    </div>
+                        <div>
+						    <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterC-04"></script><a href="//ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterC-04?ads_no=16519&amp;cmp_no=4187&amp;img_no=13678" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/seoil200908_193x72.jpg" width="193" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/center/seoil210105_193x106.png';this.height='106'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/center/seoil200908_193x72.jpg';this.height='72'"></a>
+					    </div>
+                        <div>
+						    <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterC-05"></script><a href="//ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterC-05?ads_no=16950&amp;cmp_no=4261&amp;img_no=14139" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/snjc200908_193x72.jpg" width="193" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/center/snjc200908_193x106.jpg';this.height='106'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/center/snjc200908_193x72.jpg';this.height='72'"></a>
+					    </div>
+                        <div>
+						    <script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterC-06"></script><a href="//ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterC-06?ads_no=16521&amp;cmp_no=4185&amp;img_no=13680" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/contents/tw200226_193x72.jpg" width="193" height="72" border="0" onmouseover="this.src='https://imgorg.jinhak.com/jinhakhome/contents/tw200325_193x106.jpg';this.height='106'" onmouseout="this.src='https://imgorg.jinhak.com/jinhakhome/contents/tw200226_193x72.jpg';this.height='72'"></a>
+					    </div>
+                    </div>
+                </div>
+                <!-- // middle contents -->
+
+            </div>
+            <!-- // main group -->
+
+            <div class="container bg_dark">
+                
+<div class="contents">
+    <p class="title"><span>인기 콘텐츠</span></p>
+
+    <ul class="best_list">
+        <li>
+    <a href="http://jinhaktv.jinhak.com/Detail/645V">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/Upload/JinhakVideo/취업률-랭킹_썸넬(960).jpg" alt=""><span class="time">05:57</span></span>
+        <div class="info">
+            <p class="subj">취업률 높은 대학 TOP5 ㅣ입시, 취업률, 대학교</p>
+            <p class="tag"><span>#취업률</span><span>#대학교</span><span>#4년제</span><span>#랭킹쇼</span><span>#TOP5 </span></p>
+            <div class="etc"><p class="hit">25,142</p><p class="date">2개월전</p></div>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/MajorCardNewsDetail.aspx?ContentID=823145">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/간판성신여대.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">[좋은건 같이 알자] 간판학과 - 성신여대</p>
+            <p class="tag"><span>#좋은건 같이 알자</span><span>#간판학과</span><span>#성신여자대학교</span><span>#간호학과</span><span>#미디어커뮤니케이션학과</span></p>
+        </div>
+    </a>
+</li>
+<li class=""><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterP-ALL01"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterP-ALL01?ads_no=16801&amp;cmp_no=4162&amp;img_no=14014" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/skhu200723_216x253.jpg" width="216" height="253" border="0"></a></li><li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/UnivCardNewsDetail.aspx?ContentID=823137">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/명동성당.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">여기 어때? 가톨릭대~ [선배가 들려주는 캠퍼스리뷰]</p>
+            <p class="tag"><span>#가톨릭대</span><span>#대학평판</span><span>#성심</span><span>#성신</span><span>#성의</span></p>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/Lecture/Compare/LectureCardNewsDetail.aspx?ContentID=823146">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/차원다른지구과학_1.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">선묵쌤은 처음이지? 들어봐~ [강냉이] 지구과학 최선묵</p>
+            <p class="tag"><span>#지구과학</span><span>#최선묵</span><span>#강사랭킹이슈</span></p>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="http://jinhaktv.jinhak.com/Detail/633V">
+        <span class="thume"><img src="https://img.youtube.com/vi/ZOZxcqB1zqs/mqdefault.jpg" alt=""><span class="time">00:56</span></span>
+        <div class="info">
+            <p class="subj">[경쟁률 속보] 2021학년도 고려대, 서울대, 연세대 경쟁률</p>
+            <p class="tag"><span>#입시</span><span>#경쟁률</span><span>#수시접수</span><span>#마감</span><span>#고려대</span><span>#연세대</span><span>#서울대</span><span>#진학사</span><span>#어플라이</span><span>#속보 </span></p>
+            <div class="etc"><p class="hit">6,687</p><p class="date">2개월전</p></div>
+        </div>
+    </a>
+</li>
+<li><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterP-SK02"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterP-SK02?ads_no=16810&amp;cmp_no=4284&amp;img_no=14022" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/hknu200722_216x253.jpg" width="216" height="253" border="0"></a></li><li class="">
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/UnivCardNewsDetail.aspx?ContentID=823189">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/MicrosoftTeams-image (51).png" alt=""></span>
+        <div class="info">
+            <p class="subj">예비수험생을 위한 대학상식 - 분교와 이원화캠퍼스</p>
+            <p class="tag"><span>#대학상식</span><span>#본교</span><span>#분교</span></p>
+        </div>
+    </a>
+</li>
+<li><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterP-ALL03"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterP-ALL03?ads_no=16812&amp;cmp_no=4163&amp;img_no=14024" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/contents/kyonggi200226_216x253_1.jpg" width="216" height="253" border="0"></a></li><li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/MajorCardNewsDetail.aspx?ContentID=823164">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/경기대.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">[좋은건 같이 알자] 간판학과 - 경기대</p>
+            <p class="tag"><span>#좋은건 같이 알자</span><span>#경기대</span><span>#간판학과</span><span>#경찰행정학부</span><span>#관광경영학부</span></p>
+        </div>
+    </a>
+</li>
+<li><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterP-ALL04"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterP-ALL04?ads_no=16908&amp;cmp_no=4176&amp;img_no=14119" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/wsi210309_216x253.jpg" width="216" height="253" border="0"></a></li><li>
+    <a href="https://www.jinhak.com/Lecture/Compare/LectureCardNewsDetail.aspx?ContentID=823178">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/정촉매.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">상현쌤은 처음이지? 들어봐~ [강사랭킹이슈] 화학 박상현</p>
+            <p class="tag"><span>#화학</span><span>#박상현</span><span>#강사랭킹이슈</span><span>#정촉매</span></p>
+        </div>
+    </a>
+</li>
+<li><script language="javascript" src="//ad2.jinhak.com/js.kti/U_jinhakmain/20main@CenterP-SK05"></script><a href="http://ad2.jinhak.com/click.kti/U_jinhakmain/20main@CenterP-SK05?ads_no=16951&amp;cmp_no=4144&amp;img_no=14140" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/center/kyungmin200915_216x253.jpg" width="216" height="253" border="0"></a></li><li>
+    <a href="http://jinhaktv.jinhak.com/Detail/640V">
+        <span class="thume"><img src="https://img.youtube.com/vi/lwvfrk4QK-A/mqdefault.jpg" alt=""><span class="time">06:19</span></span>
+        <div class="info">
+            <p class="subj">어떤 계열의 취업률이 가장 높을까? ㅣ 학과, 취업률, 입시</p>
+            <p class="tag"><span>#학과정보</span><span>#학과</span><span>#2022학년도</span><span>#수능</span><span>#취업률</span><span>#취업</span><span>#대학원 </span></p>
+            <div class="etc"><p class="hit">5,801</p><p class="date">2개월전</p></div>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/UnivCardNewsDetail.aspx?ContentID=823151">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/부산대.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">부산대학교~ 여기는 어때? [선배가 말하는 캠퍼스리뷰]</p>
+            <p class="tag"><span>#부산대</span><span>#대학평판</span><span>#지거국</span></p>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/MajorCardNewsDetail.aspx?ContentID=823157">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/간판숙명여대.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">[좋은건 같이 알자] 간판학과 - 숙명여대</p>
+            <p class="tag"><span>#좋은건 같이 알자</span><span>#간판학과</span><span>#숙명여대</span><span>#글로벌협력전공</span><span>#미디어학부</span></p>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/Lecture/Compare/LectureCardNewsDetail.aspx?ContentID=823203">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/박기웅(1).jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">기웅쌤은 처음이지? 들어봐~ [강냉이] 생명과학 박기웅</p>
+            <p class="tag"><span>#생명과학</span><span>#박기웅</span><span>#강사랭킹이슈</span></p>
+        </div>
+    </a>
+</li>
+<li class="">
+    <a href="http://jinhaktv.jinhak.com/Detail/642V">
+        <span class="thume"><img src="https://img.youtube.com/vi/AArGi2nFUcc/mqdefault.jpg" alt=""><span class="time">04:01</span></span>
+        <div class="info">
+            <p class="subj">장학금 많이 주는 대학 TOP5 ㅣ입시, 장학금, 대학교</p>
+            <p class="tag"><span>#랭킹쇼 </span></p>
+            <div class="etc"><p class="hit">5,668</p><p class="date">2개월전</p></div>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/UnivCardNewsDetail.aspx?ContentID=823161">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/경북대.jpg" alt=""></span>
+        <div class="info">
+            <p class="subj">여기 어때? 경북대~ [선배가 들려주는 캠퍼스리뷰]</p>
+            <p class="tag"><span>#경북대</span><span>#대학평판</span><span>#지거국</span></p>
+        </div>
+    </a>
+</li>
+<li>
+    <a href="https://www.jinhak.com/UnivInfo/ThemeUniv/MajorCardNewsDetail.aspx?ContentID=823219">
+        <span class="thume"><img src="http://board.jinhak.com/BoardV1/JinhakContent/BannerImage/MicrosoftTeams-image (54).png" alt=""></span>
+        <div class="info">
+            <p class="subj"> 약대와 비슷해 보이지만, 다른 학과들</p>
+            <p class="tag"><span>#약학과</span><span>#제약학과</span><span>#약사면허</span></p>
+        </div>
+    </a>
+</li>
+
+    </ul>
+</div>
+
+            </div>
+
+            <div class="contents">
+                <!-- HOT univ banner -->
+			    <div class="bn_hot_univ">
+				    <iframe src="/Controls/Main/ifrmMainBottomHotUnivBanner.aspx" width="100%" height="80" frameborder="0" scrolling="no" title="HOT 대학 배너"></iframe>
+			    </div>
+			    <!-- // HOT univ banner -->
+            </div>
+
+            <div class="notice_area">
+                <div class="notice_info">
+                    <p class="title">알려드립니다.</p>
+
+                    <div class="notice_slider slick-initialized slick-slider"><button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" style="display: block;">Previous</button>
+                        <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 6930px; left: -990px;"><div class="slick-slide slick-cloned" data-slick-index="-2" aria-hidden="true" tabindex="-1" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=5&amp;contentid=2429" tabindex="-1"><span class="tit">[고객센터 운영]  2021년 3월 고객센터 운영시간 안내</span> <span class="date">2021.3.2</span></a></div><div class="slick-slide slick-cloned" data-slick-index="-1" aria-hidden="true" tabindex="-1" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2413" tabindex="-1"><span class="tit">[합격예측]  2021학년도 전문대 수시 모의지원/실제합격사례 서비스 오픈</span> <span class="date">2020.8.12</span></a></div><div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide20" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=2&amp;contentid=2435" tabindex="0"><span class="tit">[서비스 공지]  생기부스터 앱 서비스 종료 안내</span> <span class="date">2021.4.1</span></a></div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide21" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2433" tabindex="0"><span class="tit">[합격예측]  3월 학평 합격예측 및 전년도 수시 합격예측 서비스 오픈</span> <span class="date">2021.3.25</span></a></div><div class="slick-slide" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide22" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=5&amp;contentid=2434" tabindex="-1"><span class="tit">[고객센터 운영]  2021년 4월 고객센터 운영시간 안내</span> <span class="date">2021.3.31</span></a></div><div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide23" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2432" tabindex="-1"><span class="tit">[합격예측]  2021학년도 고1·2 3월 수능 학력평가 서비스 오픈</span> <span class="date">2021.3.23</span></a></div><div class="slick-slide" data-slick-index="4" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide24" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=4&amp;contentid=2431" tabindex="-1"><span class="tit">[점검/안내/기타]  [정정 표기]  예비수험생을 위한 대학상식 - 분교와 이원화캠퍼스 카드뉴스</span> <span class="date">2021.3.23</span></a></div><div class="slick-slide" data-slick-index="5" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide25" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2422" tabindex="-1"><span class="tit">[합격예측]  2021학년도 정시 실채점 합격예측 서비스 오픈</span> <span class="date">2020.12.23</span></a></div><div class="slick-slide" data-slick-index="6" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide26" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=2&amp;contentid=2430" tabindex="-1"><span class="tit">[서비스 공지]  [진학통] 학년 업데이트 및 데이터 이관으로 인한 서비스 이용 제한 안내</span> <span class="date">2021.3.4</span></a></div><div class="slick-slide" data-slick-index="7" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide27" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2421" tabindex="-1"><span class="tit">[합격예측]  2021학년도 정시 모의지원/합격예측 서비스 오픈</span> <span class="date">2020.12.3</span></a></div><div class="slick-slide" data-slick-index="8" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide28" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=5&amp;contentid=2429" tabindex="-1"><span class="tit">[고객센터 운영]  2021년 3월 고객센터 운영시간 안내</span> <span class="date">2021.3.2</span></a></div><div class="slick-slide" data-slick-index="9" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide29" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2413" tabindex="-1"><span class="tit">[합격예측]  2021학년도 전문대 수시 모의지원/실제합격사례 서비스 오픈</span> <span class="date">2020.8.12</span></a></div><div class="slick-slide slick-cloned" data-slick-index="10" aria-hidden="true" tabindex="-1" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=2&amp;contentid=2435" tabindex="-1"><span class="tit">[서비스 공지]  생기부스터 앱 서비스 종료 안내</span> <span class="date">2021.4.1</span></a></div><div class="slick-slide slick-cloned" data-slick-index="11" aria-hidden="true" tabindex="-1" style="width: 495px;"><a href="/Customer/Gongji.aspx?category=1&amp;contentid=2433" tabindex="-1"><span class="tit">[합격예측]  3월 학평 합격예측 및 전년도 수시 합격예측 서비스 오픈</span> <span class="date">2021.3.25</span></a></div></div></div>
+                    <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Next" role="button" style="display: block;">Next</button></div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                //<![CDATA[
+                $(document).on('ready', function () {
+                    var _noticeSlider = $('.notice_slider');
+                    _noticeSlider.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+                        var index = (currentSlide ? currentSlide : slick.currentSlide) + 1;
+                        _noticeSlider.find('.slick-dots').html('<li>' + index + '/' + (slick.slideCount) + '</li>');//dots 가 나올자리에 <li>로 원하는 페이지 문자열 삽입
+                    });
+                    _noticeSlider.slick({
+                        fade: false,
+                        autoplay: false,
+                        autoplaySpeed: 3000,
+                        speed: 500,
+                        dots: false,
+                        //dotsClass: "customPaging",
+                        infinite: true,
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        adaptiveHeight: true,
+                        customPaging: function (currentSlide, slider, i) {
+                            //return (i+1) + "<span>" + " / " + "" + slider.slideCount;
+                        }
+                    });
+                });
+                //]]>
+            </script>
+
+            
+
+<!-- right sky group -->
+<div id="rbn_sky">
+    
+
+<!-- 내 현황 -->
+<div class="mystate">
+	<dl>
+		
+		<dt>합격예측<br>이용현황</dt>
+		<dd><a href="#">0</a>
+			<div class="layer" id="layerMyState">
+				<!-- <button type="button" class="close" onclick="out('layerMyState')"><span>닫기</span></button> -->
+				
+				<p><span>내신성적</span>
+					
+					<a href="javascript:void(0)" onclick="link(3,2,2);">미입력</a>
+					
+				</p>
+				
+				<p><span>모평성적</span> <a href="javascript:void(0)" onclick="link(5,2,2);">미입력</a></p>
+				<p><span>수시모의지원</span> <a href="javascript:void(0)" onclick="link(3,4,6);">0건</a></p>
+				<p><span>정시모의지원</span> <a href="javascript:void(0)" onclick="link(5,4,3);">0건</a></p>
+			</div>
+		</dd>
+		
+		<dt>결제내역</dt>
+		<dd><a href="javascript:void(0)" onclick="link(6,3,1);">0</a></dd>
+		<dt>My쿠폰</dt>
+		<dd><a href="javascript:void(0)" onclick="link(6,3,3);">0</a></dd>
+	</dl>
+
+    <!-- 입시일정 -->
+    <p class="bn_txt"><a href="javascript:void(0)" onclick="pop('/JinhakCommon/Controls/pop_ipsischedule.aspx','','750','740'); return false;">2021년 입시일정</a></p>
+    <!-- // 입시일정 -->
+</div>
+<!-- // 내 현황 -->
+
+    
+    
+    <!-- slide banners -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slideBnSky1 ul').bxSlider({
+                pagerType: 'short',
+                touchEnabled: false,
+                maxSlides: 1,
+                moveSlides: 1,
+                randomStart: true
+            });
+        });
+    </script>
+    <div class="box">
+        <div class="bn_sky">
+            <ul>
+                <li>
+                    <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/main@A_R_01"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/main@A_R_01?ads_no=17309&amp;cmp_no=4416&amp;img_no=14469" target="_self"><img src="https://imgorg.jinhak.com/jinhakhome/right/exsusi0325_108_100_2.gif" width="108" height="100" border="0"></a>
+                </li>
+                <li>
+                    <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/main@A_R_02"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/main@A_R_02?ads_no=17299&amp;cmp_no=4414&amp;img_no=14456" target="_self"><img src="https://imgorg.jinhak.com/jinhakhome/right/ingang210318_108_100.jpg" width="108" height="100" border="0"></a>
+                </li>
+                <li>
+                    <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/main@A_R_03"></script>
+                </li>
+                <li>
+                    <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/main@A_R_04"></script>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- // slide banners -->
+
+    
+    <!-- 이벤트 -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.slideBnSky2 ul').bxSlider({
+                pagerType: 'short',
+                touchEnabled: false,
+                maxSlides: 1,
+                moveSlides: 1,
+                randomStart: true
+            });
+        });
+    </script>
+        
+    <div class="box">
+        <div class="bn_sky slideBnSky2">
+            <div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 165px;"><ul style="width: 2215%; position: relative; transition-duration: 0s; transform: translate3d(-216px, 0px, 0px);"><li style="float: left; list-style: none; position: relative; width: 108px;" class="bx-clone" aria-hidden="true"><a href="https://www.jinhak.com/Customer/EventDetail.aspx?status=0&amp;EventID=1200">
+<img alt="[북이북서점] 만나서 반가워 잘 부탁해! 무한패스 첫 구매 50% 혜택!" src="http://board.jinhak.com/BoardV1/Upload/Event/108_165(24).jpg"></a>
+</li>
+                
+                <li style="float: left; list-style: none; position: relative; width: 108px;" aria-hidden="true"><a href="https://www.jinhak.com/Customer/EventDetail.aspx?status=0&amp;EventID=1198">
+<img alt="[신박한 리뷰 파티~] <br> 인강리뷰 등록하고 쌈박한 선물 받아가세요!" src="http://board.jinhak.com/BoardV1/Upload/Event/108_165(23).jpg"></a>
+</li><li style="float: left; list-style: none; position: relative; width: 108px;" aria-hidden="false"><a href="https://www.jinhak.com/Customer/EventDetail.aspx?status=0&amp;EventID=1200">
+<img alt="[북이북서점] 만나서 반가워 잘 부탁해! 무한패스 첫 구매 50% 혜택!" src="http://board.jinhak.com/BoardV1/Upload/Event/108_165(24).jpg"></a>
+</li>
+            <li style="float: left; list-style: none; position: relative; width: 108px;" class="bx-clone" aria-hidden="true"><a href="https://www.jinhak.com/Customer/EventDetail.aspx?status=0&amp;EventID=1198">
+<img alt="[신박한 리뷰 파티~] <br> 인강리뷰 등록하고 쌈박한 선물 받아가세요!" src="http://board.jinhak.com/BoardV1/Upload/Event/108_165(23).jpg"></a>
+</li></ul></div><div class="bx-controls bx-has-controls-direction bx-has-pager"><div class="bx-controls-direction"><a class="bx-prev" href="">Prev</a><a class="bx-next" href="">Next</a></div><div class="bx-pager bx-default-pager">2 / 2</div></div></div>
+        </div>
+        
+    </div>
+    <!-- // 이벤트 -->
+    
+</div>
+<!-- // right sky group -->
+
+        </div>
+        <script type="text/javascript">      
+            var TotalMenuTarget;
+    
+            function viewTotalTab() {
+                var jtarget = getCookieTop("JinhakTarget");
+                document.getElementById("TotalTab1").className = "";
+                document.getElementById("TotalTab2").className = "";
+                document.getElementById("TotalTab3").className = "";
+                document.getElementById("TotalTab" + jtarget).className = "selected";
+    
+                TotalMenuTarget = jtarget;
+            }
+    
+            function setTotalMenuTarget(TargetCode) {
+                TotalMenuTarget = TargetCode;
+            }
+    
+            function setCookieTotal() {
+                setCookieTop('JinhakTarget', TotalMenuTarget, 30);
+            }
+        </script>
+        <hr>
+        <div class="layer_com1 fix totalMenu" id="layerSitemap" style="display:none">
+            <div class="wrap">
+                <div class="core">
+                    <h2>전체메뉴</h2>
+                    <div class="">
+                        <ul class="tab_com2 at3 total_Tab">
+                            <li id="TotalTab1"><a href="#middle" onclick="setTotalMenuTarget(1);">고3N수</a></li><!-- selected : 해당 메뉴 활성화 -->
+                            <li id="TotalTab2"><a href="#low" onclick="setTotalMenuTarget(2);">고12</a></li>
+                            <li id="TotalTab3"><a href="#high" onclick="setTotalMenuTarget(3);">선생님</a></li>
+                        </ul>
+    
+                        <div class="total_box" id="middle"><!-- 고3N수 navi-->
+                            <div class="lineBox"><!-- box-1 -->
+                                <dl class="tt_navi">
+                                    <dt>수시 합격예측</dt>
+                                    <dd class="at2"><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>수시 대입정보</dt>
+                                                    <dd><a href="javascript:void(0);" onclick="setCookieTotal(); link(3,1,1);">입시전략</a></dd><!-- end : 비노출 -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,1,2);">공감N토크</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,1,3);">입시지식IN</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>학생부 입력</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,2,1);">출신고교</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,2,2);">학생부교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,2,3);">학생부비교과</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>수시/정시진단</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,3,1);">학생부 교과분석</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,3,2);">수시/정시 적합성</a></dd>
+                                                    
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,3,5);">내성적대 지원경향</a></dd>
+    
+                                                    
+    
+                                                    
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>4년제 합격예측</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,4,1);">대학검색</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,4,2);">추천대학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,4,7);">대학별 종합vs교과</a></dd>
+                                                    
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,4,6);">수시저장소</a></dd>
+    
+                                                    
+    
+                                                    
+                                            </dl>
+                                        </div>
+    
+                                        <div class="right">
+                                            <dl class="tt_sub_navi">
+                                                <dt>학생부 종합</dt>
+                                                    
+                                                    <dd class="end"><a href="javascript:void(0)">입시전문가 학종 평가</a><span>7월 7일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">자기소개서 평가</a><span>7월 7일 오픈 예정</span></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,5,1);">자소서 월드</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,4,1);">합격자의 썰</a></dd>
+                                                    
+                                                    
+                                                    
+                                                    
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>전문대 모의지원</dt>
+                                                    
+    
+                                                    <dd class="end"><a href="javascript:void(0)">대학검색</a><span>8월 12일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">큐레이션</a><span>8월 12일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">실제합격사례</a><span>8월 12일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">수시저장소</a><span>8월 12일 오픈 예정</span></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>원서접수후점수공개</dt>
+                                                    
+                                                    <dd class="end"><a href="javascript:void(0)">4년제</a><span>9월 10일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">전문대</a><span>9월 10일 오픈 예정</span></dd>
+                                            </dl>
+    
+                                            
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt><a href="http://www.jinhakapply.com" target="_blank">공통원서접수</a></dt>
+                                    <!-- <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)">진학TV</a></dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link();">진학TV</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd> -->
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-2 -->
+                                <dl class="tt_navi">
+                                    <dt>정시 합격예측</dt>
+                                    <dd class="at2"><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>정시 대입정보</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,1,1);">입시전략</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,1,2);">공감N토크</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,1,3);">입시지식IN</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적입력</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,2,1);">출신고교</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,2,2);">모평성적</a></dd>
+                                                    
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,2,3);">학생부교과</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적분석</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,3,1);">등급컷/채점</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,3,2);">수능예측점수</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,3,3);">대학별수능반영영역</a></dd>
+    
+    
+                                                    
+                                                    
+                                                    
+                                                    
+    
+                                                    
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>4년제 합격예측</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,4,1);">대학검색</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,4,2);">추천대학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,4,11);">큐레이션</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,4,3);">정시저장소</a></dd>
+    
+                                                    
+    
+                                                    
+    
+                                                    
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>정시 실제커트라인</dt>
+                                                    <!--<dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,5,1);">대학별 커트라인</a></dd>-->
+                                                    <dd class="end"><a href="javascript:void(0)">대학별 커트라인</a><span>6월 3일 오픈 예정</span></dd>
+                                            </dl>
+                                        </div>
+    
+                                        <div class="right">
+                                            <dl class="tt_sub_navi">
+                                                <dt>전문대 모의지원</dt>
+                                                    
+    
+                                                    <dd class="end"><a href="javascript:void(0)">대학검색</a><span>12월 16일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">큐레이션</a><span>12월 16일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">실제합격사례</a><span>12월 16일 오픈 예정</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">정시저장소</a><span>12월 16일 오픈 예정</span></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>원서접수후점수공개</dt>
+                                                    
+    
+                                                    <dd class="end"><a href="javascript:void(0)">4년제</a><span>서비스 이용기간 종료</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">전문대</a><span>서비스 이용기간 종료</span></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>정시합격상담</dt>
+                                                    <dd class="end"><a href="javascript:void(0)">비대면 정시상담</a><span>서비스 이용기간 종료</span></dd>
+                                                    <dd class="end"><a href="javascript:void(0)">지역센터 정시상담</a><span>서비스 이용기간 종료</span></dd>
+                                                    
+                                            </dl>
+                                            
+    
+                                            
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-3 -->
+                                <dl class="tt_navi">
+                                    <dt>대학학과</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>테마대학</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,1,1);">대학 카드뉴스</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,1,2);">학과 카드뉴스</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,1,3);">요강.입결 테마검색</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>대학정보</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,2,1);">전체보기</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,2,2);">지도로 찾기</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,2,3);">설립연도순 보기</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>대학평판비교</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,4,2);">대학평판비교</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>학과정보</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,1);">학과전체보기</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,2);">학과정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,3);">설치대학</a></dd>
+                                                    
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt><a href="javascript:void(0)" onclick="setCookieTotal(); link(12);">진학TV</a></dt>
+                                    <!-- <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)">진학TV</a></dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link();">진학TV</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd> -->
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>인강리뷰</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,1);">인강리뷰검색</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,2,1);">강사평판비교</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,2,2);">인강카드뉴스</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,3);">강사배틀</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,4);">맞춤인강</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>블랙라벨</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,1);">도서안내</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,2);">도서자료실</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,3);">선생님자료실</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt><a href="javascript:void(0)">북이북서점</a></dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,1);">이북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,2);">북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,12);">자유이용권</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,14);">북카트</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,5);">마이북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,6);">이용안내</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-4 -->
+    
+                                <dl class="tt_navi">
+                                    <dt>마이페이지</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,1);">출신고교·기본정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,2);">학생부교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,3);">학생부비교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,4);">수능학력평가</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>활동관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,1);">클립한 정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,5);">리뷰·배틀 관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,3);">자소서월드 관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,4);">나의 Q&amp;A 관리</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>결제쿠폰관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,1);">결제/배송조회</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,2);">취소/반품조회</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,3);">쿠폰관리</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>회원정보관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,1);">배송지/계좌관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,2);">메일/문자 수신설정</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,3);">회원정보 수정</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,4);">회원탈퇴 신청</a></dd>
+                                            </dl>
+                                        </div>
+    
+                                    </dd>
+                                </dl>
+    
+                            </div>
+    
+                            <div class="lineBox"><!-- box-5 -->
+                                <dl class="tt_navi">
+                                    <dt>고객센터</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <!-- <dt><a href="javascript:void(0)">고객센터</a></dt> -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,1);">공지사항</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,2);">FAQ</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,3);">이벤트</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,4);">1:1 문의</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>회사소개</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <!-- <dt><a href="javascript:void(0)">고객센터</a></dt> -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,1);">회사소개</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,2);">진학사 문화</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,3);">언론 속 진학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,4);">인재채용</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                        </div>
+    
+                        <div class="total_box" id="low"><!-- 고12 navi-->
+                            <div class="lineBox"><!-- box-1 -->
+                                <dl class="tt_navi">
+                                    <dt>수시정보</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>만만한 입시</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,8,1);">고1</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,8,2);">고2</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,8,3);">입시전략</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>학생부 입력</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,2,1);">출신고교</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,2,2);">학생부교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,2,3);">학생부비교과</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적분석</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,1,5);">수시정시진단</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,1,6);">학생부교과분석</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>합격가능성</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,2,1);">대학검색</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,2,2);">수시추천대학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,2,3);">대학저장소</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>학생부종합</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,3);">추천활동</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,4,1);">합격자의 썰</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,4,2);">합격자의 학생부</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,5,1);">자소서 월드</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,5);">학종 LIVE</a></dd>
+                                            </dl>
+                                        </div>
+    
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>고객센터</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <!-- <dt><a href="javascript:void(0)">고객센터</a></dt> -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,1);">공지사항</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,2);">FAQ</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,3);">이벤트</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,4);">1:1 문의</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-2 -->
+                                <dl class="tt_navi">
+                                    <dt>정시정보</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>만만한 입시</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,10,1);">고1</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,10,2);">고2</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(5,10,3);">입시전략</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>학평성적입력</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,1,1);">출신고교</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(22,1,4);">학력평가</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적분석</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(23,1,5);">수시정시진단</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(23,1,6);">수능학평분석</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>합격가능성</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(23,2,1);">대학검색</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(23,2,2);">정시추천대학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(23,2,3);">대학저장소</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi" style="margin-top:175px;">
+                                    <dt>회사소개</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <!-- <dt><a href="javascript:void(0)">고객센터</a></dt> -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,1);">회사소개</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,2);">진학사 문화</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,3);">언론 속 진학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,4);">인재채용</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-3 -->
+                                <dl class="tt_navi">
+                                    <dt>대학학과</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>테마대학</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,1,1);">대학 카드뉴스</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,1,2);">학과 카드뉴스</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,1,3);">요강.입결 테마검색</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>대학정보</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,2,1);">전체보기</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,2,2);">지도로 찾기</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,2,3);">설립연도순 보기</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>대학평판비교</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,4,2);">대학평판비교</a></dd>
+                                            </dl>
+                                            <dl class="tt_sub_navi">
+                                                <dt>학과정보</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,1);">학과전체보기</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,2);">학과정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,5);">골라줘!선택과목</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(2,5,3);">설치대학</a></dd>
+                                                    
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>진로학습검사</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>진로진학예측검사</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,1,1);">특징 및 소개</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,3);">온라인 검사</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,3,5);">결과리포트</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,3,1);">결제안내</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>학습동기진단검사</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,6,1);">특징 및 소개</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,6,3);">온라인 검사</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,6,4);">결과리포트</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,2,6,5);">결제안내</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>진학진단전문가과정</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(16,3,1);">진학진단전문가과정</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-4 -->
+                                <dl class="tt_navi">
+                                    <dt><a href="javascript:void(0)" onclick="setCookieTotal(); link(12);">진학TV</a></dt>
+                                    <!-- <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)">진학TV</a></dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link();">진학TV</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd> -->
+                                </dl>
+    
+                                <dl class="tt_navi" style="margin-top:106px;">
+                                    <dt>구독컨설팅</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(28,1);">서비스 소개</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(28,2);">결제안내</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(28,3);">My구독</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+    
+                                <dl class="tt_navi" style="margin-top:106px;">
+                                    <dt>인강리뷰</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,1);">인강리뷰검색</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,2,1);">강사평판비교</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,2,2);">인강카드뉴스</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,3);">강사배틀</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,4);">맞춤인강</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-5 -->
+                                <dl class="tt_navi">
+                                    <dt>블랙라벨</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,1);">도서안내</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,2);">도서자료실</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,3);">선생님자료실</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>북이북서점</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,1);">이북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,2);">북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,12);">자유이용권</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,14);">북카트</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,5);">마이북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,6);">이용안내</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-6 -->
+                                <dl class="tt_navi">
+                                    <dt>마이페이지</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,1);">출신고교·기본정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,2);">학생부교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,3);">학생부비교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,4);">수능학력평가</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>활동관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,1);">클립한 정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,5);">리뷰·배틀 관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,3);">자소서월드 관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,4);">나의 Q&amp;A 관리</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>결제쿠폰관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,1);">결제/배송조회</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,2);">취소/반품조회</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,3);">쿠폰관리</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>회원정보관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,1);">배송지/계좌관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,2);">메일/문자 수신설정</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,3);">회원정보 수정</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,4);">회원탈퇴 신청</a></dd>
+                                            </dl>
+                                        </div>
+    
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+    
+                        <div class="total_box" id="high"><!-- 교강사 navi-->
+                            <div class="lineBox"><!-- box-1 -->
+                                <dl class="tt_navi">
+                                    <dt>대입정보</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)" onclick="setCookieTotal(); link(3,1,1);">입시전략</a></dt>
+                                                    <!-- <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link();">고1</a></dd> -->
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>대입자료실</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(26,2,1);">모집요강 자료실</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(26,2,2);">입시결과 자료실</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(26,2,3);">대학별고사 자료실</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(26,2,4);">모평/수능 기출문제</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(26,2,5);">교육기관/강의 자료실</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)" onclick="setCookieTotal(); link(26,3);">진학 메일링</a></dt>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>학생관리프로그램</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)" onclick="link(20,1);">학생관리프로그램</a></dt>
+                                                    <!-- <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link();">고1</a></dd> -->
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-2 -->
+                                <dl class="tt_navi">
+                                    <dt>입시교육·설명회</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>입시교육·설명회</dt>
+                                                    
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(13,2);">오프라인 입시전문가</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(13,3);">2021 의대특강</a></dd>
+                                                    
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(13,7);">단과과정</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-3 -->
+                                <dl class="tt_navi">
+                                    <dt><a href="javascript:void(0)" onclick="setCookieTotal(); link(12);">진학TV</a></dt>
+                                    <!-- <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt><a href="javascript:void(0)">진학TV</a></dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link();">진학TV</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd> -->
+                                </dl>
+    
+                                <dl class="tt_navi" style="margin-top:106px;">
+                                    <dt>인강리뷰</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,1);">인강리뷰검색</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,2,1);">강사평판비교</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,2,2);">인강카드뉴스</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,3);">강사배틀</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(24,4);">맞춤인강</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-4 -->
+                                <dl class="tt_navi">
+                                    <dt>블랙라벨</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,1);">도서안내</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,2);">도서자료실</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(4,3);">선생님자료실</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>북이북서점</dt>
+                                    <dd class="">
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,1);">이북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,2);">북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,12);">자유이용권</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,14);">북카트</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,5);">마이북</a></dd>
+                                                <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(14,6);">이용안내</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-5 -->
+                                <dl class="tt_navi">
+                                    <dt>마이페이지</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <dt>성적관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,1);">출신고교·기본정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,2);">학생부교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,3);">학생부비교과</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,1,4);">수능학력평가</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>활동관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,1);">클립한 정보</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,5);">리뷰·배틀 관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,3);">자소서월드 관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,2,4);">나의 Q&amp;A 관리</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>결제쿠폰관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,1);">결제/배송조회</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,2);">취소/반품조회</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,3,3);">쿠폰관리</a></dd>
+                                            </dl>
+    
+                                            <dl class="tt_sub_navi">
+                                                <dt>회원정보관리</dt>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,1);">배송지/계좌관리</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,2);">메일/문자 수신설정</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,3);">회원정보 수정</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(6,4,4);">회원탈퇴 신청</a></dd>
+                                            </dl>
+                                        </div>
+    
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                            <div class="lineBox"><!-- box-6 -->
+                                <dl class="tt_navi">
+                                    <dt>고객센터</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <!-- <dt><a href="javascript:void(0)">고객센터</a></dt> -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,1);">공지사항</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,2);">FAQ</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,3);">이벤트</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(7,4);">1:1 문의</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+    
+                                <dl class="tt_navi">
+                                    <dt>회사소개</dt>
+                                    <dd class=""><!-- at2 addClass : 2줄-->
+                                        <div class="left">
+                                            <dl class="tt_sub_navi">
+                                                <!-- <dt><a href="javascript:void(0)">고객센터</a></dt> -->
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,1);">회사소개</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,2);">진학사 문화</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,3);">언론 속 진학</a></dd>
+                                                    <dd><a href="javascript:void(0)" onclick="setCookieTotal(); link(30,4);">인재채용</a></dd>
+                                            </dl>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+    
+                <p class="close"><a href="javascript:void(0)" class="close">전체 메뉴 닫기</a></p>
+            </div>
+        </div>
+        <hr>
+        <div id="footer">
+            <div class="core">
+                <ul class="link">
+                    <li><a href="http://www.jinhaksa.co.kr/" target="_blank">회사소개</a></li>
+                    <li><a href="https://member.jinhak.com/MemberV3/Policy/Terms.aspx">이용약관</a></li>
+                    <li><a href="https://member.jinhak.com/MemberV3/Policy/Privacy.aspx"><b>개인정보처리방침</b></a></li>
+                    <li><a href="https://member.jinhak.com/MemberV3/Policy/Youth.aspx">청소년보호정책</a></li>
+                    <li><a href="https://member.jinhak.com/MemberV3/Policy/Article.aspx">기사배열기본방침</a></li>
+                    <li class="more"><button type="button"><span>광고안내</span></button>
+                        <ul class="layer">
+                            <li><a href="http://board.jinhak.com/BoardV1/Upload/JinhakMainDisplay/2020_jinhak_Media_com.pdf" target="_blank">기업광고 소개</a></li>
+                            <li><a href="http://board.jinhak.com/BoardV1/Upload/JinhakMainDisplay/2020jinhak_Media_uni.pdf" target="_blank">대학광고 소개</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="javascript:void(0);" onclick="window.open('https://www.jinhak.com/PopUp/PopPartnership.aspx','','width=700px,height=900px,scrollbars=yes,status=1');">제휴문의</a></li>
+                </ul>
+    
+                <p class="info">
+                    <span>㈜진학사 사업자등록번호 : 101-81-57765</span>
+                    <span class="bar">통신판매업 신고번호 : 2002-00342호</span>
+                    <span><em>FAX</em> 02-735-8432</span>
+                    <span><em>고객센터</em> <b>1544-7715</b></span>
+                </p>
+    
+                <p class="copyright">
+                    <span class="fc_cloud">Copyright(c) JINHAK Corp. All Rights Reserved</span>
+                    <a href="mailto:jinhak@jinhak.com" class="mail">jinhak@jinhak.com</a>
+                    <span class="sns">
+                        <a href="http://post.naver.com/jinhak_com" target="_blank"><img src="https://imgorg.jinhak.com/renewal2019/common/sns2_post.png" alt="네이버 포스트"></a>
+                        <a href="https://blog.naver.com/jinhak_com" target="_blank"><img src="https://imgorg.jinhak.com/renewal2019/common/sns2_blog.png" alt="네이버 블로그"></a>
+                        <a href="https://www.youtube.com/channel/UCxGvIRwvQdBDRYKtRULB76A" target="_blank"><img src="https://imgorg.jinhak.com/renewal2019/common/sns2_youtube.png" alt="유투브"></a>
+                        <a href="https://www.facebook.com/jinhaksa" target="_blank"><img src="https://imgorg.jinhak.com/renewal2019/common/sns2_facebook.png" alt="페이스북"></a>
+                        <a href="https://twitter.com/jinhaksa" target="_blank"><img src="https://imgorg.jinhak.com/renewal2019/common/sns2_twitter.png" alt="트위터"></a>
+                        <a href="https://www.instagram.com/jinhaksa/" target="_blank"><img src="https://imgorg.jinhak.com/renewal2019/common/sns2_instargram.png" alt="인스타그램"></a>
+                    </span>
+                </p>
+    
+                <div class="mark">
+                    <script type="text/javascript" src="https://pgweb.uplus.co.kr/WEB_SERVER/js/escrowValid.js"></script>
+                    <a href="javascript:void(0)" onclick="goValidEscrow('jinhakbook')"><img src="https://imgorg.jinhak.com/renewal2019/common/footer_mark_lg.gif" alt="LG U+"></a>
+                    <img src="https://imgorg.jinhak.com/renewal2019/common/footer_mark_award1.gif" alt="대한민국 교육기업 대상">
+                    <img src="https://imgorg.jinhak.com/renewal2019/common/footer_mark_award2.gif" alt="대한민국 교육브랜드 대상">
+                    <span class="more"><button type="button"><img src="https://imgorg.jinhak.com/renewal2019/common/footer_mark_isms.gif" alt="ISMS 인증"></button>
+                        <div class="layer">
+                            <p class="fc_cloud">인증범위 : 진학사 입시,취업 정보제공 서비스 운영<br>유효기간 : 20.11.04 ~ 23.11.03</p>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <p class="btn_gotop" style="display: none; bottom: 25px; position: fixed;"><button type="button">TOP으로 이동</button></p>
+        <script type="text/javascript">
+            var google_conversion_id = 974350470;
+            var google_custom_params = window.google_tag_params;
+            var google_remarketing_only = true;
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+            <div style="display:inline;">
+                <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/974350470/?value=0&amp;guid=ON&amp;script=0" />
+            </div>
+            </noscript>
+            <div class="layerPopup default is_show" id="LivePopUp" style="top:410px; left: 5%; z-index: 14; display:none;">
+                <div class="inWrap default">
+                    <!-- contents -->
+                    <div><a href="/UnivInfo/LiveStream/Jungsi_Live.aspx"><img src="https://imgorg.jinhak.com/renewal2020/main/jungsi_live_popup.png" alt="수시 합격 집콕 프로젝트, 랜선LIVE 바로가기"></a></div>
+                    <!-- // contents -->
+    
+                    <div class="today" style="bottom: -20px;">
+                        <button type="button" onclick="closePopLayer()"><b>오늘 하루 보지 않기</b></button>
+                    </div>
+                </div>
+            </div>
+            <div class="k_satInfo layerPopup default" id="k_satInfo">
+                <div class="inWrap">
+    
+                    <!-- contents -->
+                    
+                    <div class="obj"><img src="https://imgorg.jinhak.com/renewal2020/main/apply_2021.png" alt="찍어도 정답길만!! 진학사가 수험생 여러분을 응원합니다!"></div>
+                    <!-- // contents -->
+    
+                    <div class="today">
+                        <button type="button" onclick="setCookie('CheerLayer','done',1); $('#k_satInfo').removeClass('is_show');"><span>오늘 하루<br>보지 않기</span></button>
+                    </div>
+    
+                </div>
+            </div>
+            <script type="text/javascript">
+                //<![CDATA[
+                function timerHide() {
+                    $("#k_satInfo").fadeOut();
+                }
+                setTimeout(
+                    function () {
+                        timerHide()
+                    }, 5000);
+                //]]>
+            </script>
+
+    </div>
+    <iframe id="google_osd_static_frame_5960486656240" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe>
+    <div id="bn_bot_fixed" style="opacity: 1; display: block;">
+        <div class="ad">
+            <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/20main@Bottom01"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/20main@Bottom01?ads_no=16412&amp;cmp_no=4149&amp;img_no=13681" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/bottom/dongguk200327_580x50-1.png" width="580" height="50" border="0"></a>
+            <script language="javascript" src="//ad2.jinhak.com/js.kti/19jinhakmain/20main@Bottom02"></script><a href="http://ad2.jinhak.com/click.kti/19jinhakmain/20main@Bottom02?ads_no=17019&amp;cmp_no=4317&amp;img_no=14189" target="_blank"><img src="https://imgorg.jinhak.com/jinhakhome/bottom/univpoint201111_580x50R.gif" width="580" height="50" border="0"></a>
+        </div>
+        <p class="close"><button type="button" onclick="out('bn_bot_fixed')"><span>닫기</span></button></p>
+    </div>
+    <iframe src="https://bid.g.doubleclick.net/xbbe/pixel?d=KAE" style="display: none;"></iframe>
+    <iframe src="https://bid.g.doubleclick.net/xbbe/pixel?d=KAE" style="display: none;"></iframe>
+
+
+</body>
+<iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20210406/r20190131/zrt_lookup.html#" data-ad-client="ca-pub-1528326363701534" style="display: none;"></iframe>
+</html>
